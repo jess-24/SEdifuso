@@ -14,18 +14,18 @@ public class Archivos {
         //num_etiqueta es el numero de traslape en el que se encuentre la entrada real
         //num_etiqueta=;
         //Rescatar el valor de X2 Y DE XX1;
-        valor_X2=//el final del traslape en el que se encuentra la entrada real;
-        valor_XX1=//el inicio del traslape en el que se encuentra la entrada real;
+        valor_X2=0;//el final del traslape en el que se encuentra la entrada real;
+        valor_XX1=0;//el inicio del traslape en el que se encuentra la entrada real;
         return true;
     }
     public void buscar_ArchivoPC(int num_etiqueta) {
         //leer e ir comparando con el numero de etiqueta hasta encontrarlo
-        valor_X1=//primer punto critico encontrado
-                ;
+        valor_X1=0;//primer punto critico encontrado
+
         num_etiqueta++;
         //leer e ir comparando con el numero de etiqueta hasta encontrarlo
-        valor_XX2=//=//primer punto critico encontrado
-        ;
+        valor_XX2=0;//=//primer punto critico encontrado
+
     }
     public int getNum_etiqueta(){
         return num_etiqueta;

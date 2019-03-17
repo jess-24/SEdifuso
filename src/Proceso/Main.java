@@ -13,12 +13,12 @@ public class Main {
             System.out.println("2. Editar variables");
             System.out.println("3. Salir");
 
-            switch (s.nextInt();){
+            switch (s.nextInt()){
                 case 1:
                     evaluar();
                     break;
             }
-        }while(s<3);
+        }while(s.nextInt()<3);
 
 
     }
@@ -30,7 +30,7 @@ public class Main {
         //evaluar cada valor real
         int entrada_real=45;
         //for(int x=1; x<=num_var; x++){
-             difusicar.setEntradaReal(entrada_real,num_var);
+           //  difusicar.setEntradaReal(entrada_real,num_var);
         // }
 
     }

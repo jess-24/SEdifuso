@@ -2,7 +2,7 @@ package Proceso;
 
 public class Evaluar {
 
-    public static void Evaluer(int entrara_real) {
+    public void Evaluer(int entrara_real) {
         int PC1 = 1, PC2 = 1, PC3 = 1;
         int primera_etiqueda = 0, ultima_etiqueta = 0;
         int entrada_real = 0;
@@ -41,6 +41,8 @@ public class Evaluar {
                             if (entrada_real< pt_izquierda)
                             {
                                 //llamar calcular pendiente
+                                Double pertenenciaY  = Pendiente(entrada_real,PC1,1,pt_derecha,0);
+                                System.out.println();
                             }
                         }
                     }
@@ -48,4 +50,13 @@ public class Evaluar {
             }
         }
     }//metodo
+
+    public double Pendiente(int x,double x1,double y1,double x2,double y2){
+        double y = 0.0;
+        y = ((x-x1)*(y2-y1)/(x2-x1)) + y1;
+        return y;
+    }
+
+
 }//class
+
