@@ -15,30 +15,68 @@ public class Maestro {
     RandomAccessFile maestro;
     long tamaño;
     int res[];
-    int bandera = 1;
-    String premisa, aux[], premisas[];
+    int bandera = 1, configuracion = 4, largo = 2;
+    String aux[], premisas[];
     Scanner scan = new Scanner(System.in);
 
+    String premisa, salida, prueba, dato;
+    StringBuffer datos;
+
+
     public void escribirVariable(int llave) throws IOException {
-        maestro = new RandomAccessFile("maestro.dat", "rw");
-        tamaño = maestro.length();
-        maestro.seek(tamaño);//nos vamos hasta el final del archivo
-        res = indice.buscarIndice(llave);
-        if (res[0] == 1) {
-            System.out.println("Regla ya existente.");
-            System.out.println("Presione 0 para terminar o 1 para ingresar una nueva regla.");
-            bandera = scan.nextInt();
-        }else {
-            indice.escribir_indice(llave);//escribimos la entrada en el indice
-            maestro.writeInt(llave);//escribimos la regla en el maestro
-            System.out.println("ingrese las premisas separadas por una coma p1,p2,p3");
-            premisa = scan.next();
-            aux = premisa.split(",");
-            for (int i = 0; i < aux.length; i++) {
-                premisas[i] = aux[i];
-            }
-        }
+        do {
+            maestro = new RandomAccessFile("maestro.dat", "rw");
+            tamaño = maestro.length();
+            maestro.seek(tamaño);//nos vamos hasta el final del archivo
+            res = indice.buscarIndice(llave);
+
+            if (res[0] == 1) {
+                System.out.println("Regla ya existente.");
+                System.out.println("Presione 0 para terminar o 1 para ingresar una nueva regla.");
+                bandera = scan.nextInt();
+            } else {
+                indice.escribir_indice(llave);//escribimos la entrada en el indice
+                maestro.writeInt(llave);//escribimos la regla en el maestro
+                System.out.println("ingrese las premisas separadas por una coma p1,p2,p3");
+                premisa = scan.next();
+                aux = premisa.split(",");
+
+                for (int i = 0; i < aux.length; i++)
+                    premisas[i] = aux[i];
+
+                for (int n = 0; n < configuracion; n++) {
+                    if (premisas[n] != null) {
+                        dato = premisas[n];
+                        datos = new StringBuffer(dato);
+                        datos.setLength(largo);
+                        prueba = datos.toString();
+                        maestro.writeChars(prueba);
+                    } else {
+                        dato = "Pv";
+                        datos = new StringBuffer(dato);
+                        datos.setLength(largo);
+                        prueba = datos.toString();
+                        maestro.writeChars(prueba);
+                    }
+                }//fin for cuando salga del for ya tiene que haber escrito todas las premisas ingresadas
+                dato = "->";
+                datos = new StringBuffer(dato);
+                datos.setLength(largo);
+                prueba = datos.toString();
+                maestro.writeChars(prueba);
+                System.out.println("ingrese la salida !solo una premisa!");
+                dato = scan.next();
+                datos = new StringBuffer(dato);
+                datos.setLength(largo);
+                prueba = datos.toString();
+                maestro.writeChars(prueba);
+                maestro.close();
+                System.out.println("Presione 0 para terminar o 1 para ingresar una nueva regla");
+                bandera = scan.nextInt();
+            }//fin else
+        }while (bandera != 0);
     }
+
 
     public void leerSecuencial(){
 
