@@ -72,8 +72,10 @@ public class Main {
     }
 
     public static void main(String [] args) throws IOException {
+       interfaz i = new interfaz();
+       i.interfaz();
         Difusificacion d = new Difusificacion();
-        menu();
+        //menu();
     }
 
 
