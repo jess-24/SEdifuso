@@ -16,8 +16,8 @@ public class interfaz extends JFrame{
     private JButton agregarNuevasVariablesButton;
 
     private JMenuBar menuBar;
-    private JMenu Archivos;
-    private JMenuItem maestro, indice, traslapes;
+    private JMenu Archivos,maestro;
+    private JMenuItem  indice, traslapes, secuencial;
 
     int entrada_real = 0;
 
@@ -33,15 +33,19 @@ public class interfaz extends JFrame{
         agregarNuevasVariablesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Competencias c = new Competencias();
+                c.Competencias();
+                /*
                 int llave =  Integer.parseInt( JOptionPane.showInputDialog(null,"Llave de la regla a escribir:"));
                 Maestro m = new Maestro();
                 try {
                     m.escribirVariable(llave);
                 } catch (IOException e1) {
                     e1.printStackTrace();
-                }
+                }*/
             }
         });
+
 
     }
 
@@ -54,13 +58,15 @@ public class interfaz extends JFrame{
         this.setContentPane(panel_principal);
         menuBar = new JMenuBar();
         Archivos = new JMenu("Archivos");
-        maestro = new JMenuItem("Archivo Maestro(puntos críticos)");
+        maestro = new JMenu("Archivo Maestro(puntos críticos)");
+        secuencial = new JMenuItem("Ver archivo secuencial");
         indice = new JMenuItem("Archivo Indice");
         traslapes = new JMenuItem("Archivo Traslapes");
 
         menuBar.add(Archivos);
 
-        Archivos.add(new AbstractAction("Archivo Maestro(puntos críticos)")
+        Archivos.add(maestro);
+        maestro.add(new AbstractAction("Ver archivo secuencial")
         {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -68,6 +74,14 @@ public class interfaz extends JFrame{
 
             }
         });
+        /*Archivos.add(new AbstractAction("Archivo Maestro(puntos críticos)")
+        {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                System.out.println("action");
+
+            }
+        });*/
         Archivos.add(new AbstractAction("Archivo Indice")
         {
             @Override
