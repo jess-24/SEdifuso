@@ -9,7 +9,7 @@ public class Traslapes {
     double valor_XX2;
 
     public boolean buscar_ArchivoTraslapes(int entrada_real){
-        //rescatar número de etiqueta
+        //rescatar número de competencia
         //num_etiqueta es el numero de traslape en el que se encuentre la entrada real
         //num_etiqueta=;
         //Rescatar el valor de X2 Y DE XX1;
@@ -19,11 +19,11 @@ public class Traslapes {
     }
 
     public void buscar_ArchivoPC(int num_etiqueta) {
-        //leer e ir comparando con el numero de etiqueta hasta encontrarlo
+        //leer e ir comparando con el numero de competencia hasta encontrarlo
         valor_X1=0;//primer punto critico encontrado
 
         num_etiqueta++;
-        //leer e ir comparando con el numero de etiqueta hasta encontrarlo
+        //leer e ir comparando con el numero de competencia hasta encontrarlo
         valor_XX2=0;//=//primer punto critico encontrado
 
     }
