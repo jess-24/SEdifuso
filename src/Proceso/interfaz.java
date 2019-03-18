@@ -42,7 +42,7 @@ public class interfaz extends JFrame{
                 }
             }
         });
-        
+
     }
 
     public void interfaz()
@@ -59,9 +59,33 @@ public class interfaz extends JFrame{
         traslapes = new JMenuItem("Archivo Traslapes");
 
         menuBar.add(Archivos);
-        Archivos.add(maestro);
-        Archivos.add(indice);
-        Archivos.add(traslapes);
+
+        Archivos.add(new AbstractAction("Archivo Maestro(puntos críticos)")
+        {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                System.out.println("action");
+
+            }
+        });
+        Archivos.add(new AbstractAction("Archivo Indice")
+        {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                System.out.println("action");
+
+            }
+        });
+        Archivos.add(new AbstractAction("Archivo Traslapes")
+        {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                System.out.println("action");
+
+            }
+        });
+
+
         this.setJMenuBar(menuBar);
         this.setVisible(true);
 
