@@ -69,7 +69,6 @@ public class Indice {
                 System.out.println();
             }
         } else {
-            System.out.println("El archivo está vacio");
         }
 
         indice.close();
@@ -92,12 +91,12 @@ public class Indice {
             else
                 file.writeInt(respuesta.getPosicion() + 1);
 
-            for (int i = 0; i < etiqueta.length(); i++)
+            for (int i = 0; i < etiqueta.length(); i++) {
                 file.writeChar(etiqueta.charAt(i));
-
-            for (int i = 0; i < 50 - etiqueta.length(); i++)
+            }
+            for (int i = 0; i < 50 - etiqueta.length(); i++) {
                 file.writeChar(' ');
-
+            }
 
             file.close();
             escrito = true;
