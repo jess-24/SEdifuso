@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b88961e9-2398-45a3-853d-86b0791172bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proceso/Archivos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Archivos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proceso/Indice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Indice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proceso/Maestro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Maestro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proceso/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proceso/Traslapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Traslapes.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Proceso/Indice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="272">
+              <caret line="94" column="46" lean-forward="true" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4230#4231#0" expanded="true" />
@@ -194,7 +188,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552874496093" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552875080009" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -343,7 +337,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552600732960</updated>
-      <workItem from="1552858834195" duration="13875000" />
+      <workItem from="1552858834195" duration="14976000" />
     </task>
     <task id="LOCAL-00001" summary="Agregue clases de archivos y les meti metodos que aun no funcionan.">
       <created>1552860794199</created>
@@ -359,11 +353,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552862614331</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Maestro genera arreglos con los datos necesarios (etiquetas y puntos criticos), indice agrega llave, posicion y nombre de competencia.">
+      <created>1552874569778</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1552874569780</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18916000" />
+    <option name="totallyTimeSpent" value="20017000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,7 +377,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18229954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -388,14 +388,14 @@
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.32786885" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.32786885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3295082" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3295082" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49848714" weight="0.32786885" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -441,6 +441,32 @@
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="SHOW_DETAILS" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -559,8 +585,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Proceso/Indice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="272">
+          <caret line="94" column="46" lean-forward="true" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4230#4231#0" expanded="true" />
