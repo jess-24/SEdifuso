@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Main {
     private static Difusificacion difusicar;
     private static Maestro maestro = new Maestro();
+    private static Indice indice = new Indice();
 
     public static void menu() throws IOException {
         Scanner scan = new Scanner(System.in);
@@ -31,13 +32,17 @@ public class Main {
                     //evaluar();
                     break;
                 case 2:
-                    System.out.println("Escribe la llave de la regla a escribir:");
+                    System.out.println("Escribe la llave de la regla por escribir:");
                     do{
                         llave = scan.nextLine();
                     } while(!validarNumerico(llave));
                     maestro.escribirVariable(Integer.parseInt(llave));
+                    break;
                 case 4:
                     maestro.leerSecuencial();
+                    break;
+                case 5:
+                    indice.leerSecuencial();
             }
         }while(s < 7);
     }
@@ -72,8 +77,10 @@ public class Main {
     }
 
     public static void main(String [] args) throws IOException {
+       interfaz i = new interfaz();
+       i.interfaz();
         Difusificacion d = new Difusificacion();
-        menu();
+        //menu();
     }
 
 

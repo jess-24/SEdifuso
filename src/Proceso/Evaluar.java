@@ -2,7 +2,7 @@ package Proceso;
 
 public class Evaluar {
 
-    public void Evaluer(int entrara_real) {
+    public void Evaluar(int entrara_real) {
         int PC1 = 1, PC2 = 1, PC3 = 1;
         int primera_etiqueda = 0, ultima_etiqueta = 0;
         int entrada_real = 0;

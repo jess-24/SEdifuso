@@ -14,62 +14,84 @@ public class Maestro {
     int longitud = 68;
     RandomAccessFile maestro;
     long tamaño;
-    int res[];
-    int bandera = 1, configuracion = 4, largo = 2;
+    Indice res;
+    int bandera = 1, configuracion = 4, largo = 2, llave;
     String aux[], premisas[];
     Scanner scan = new Scanner(System.in);
 
     String premisa, salida, prueba, dato;
     StringBuffer datos;
 
+    String competencia, ca, etiqueta, pc;
+    boolean band;
+    int pcs[] = new int[16];
+    String etiqs[] = new String[16];
 
-    public void escribirVariable(int llave) throws IOException {
+
+    public void escribirVariable(int id) throws IOException {
+        llave = id;
         do {
             maestro = new RandomAccessFile("maestro.dat", "rw");
             tamaño = maestro.length();
             maestro.seek(tamaño);//nos vamos hasta el final del archivo
             res = indice.buscarIndice(llave);
+            competencia = "";
 
-            if (res[0] == 1) {
+            if (res.getExistente() == 1) {
                 System.out.println("Regla ya existente.");
-                System.out.println("Presione 0 para terminar o 1 para ingresar una nueva regla.");
-                bandera = scan.nextInt();
+                System.out.println("Escriba una nueva existente para continuar o 0 para terminar.");
+                llave = scan.nextInt();
             } else {
-                indice.escribir_indice(llave);//escribimos la entrada en el indice
+                System.out.println("Coloque el nombre de la competencia");
+
+                competencia = scan.nextLine();
+                indice.escribir_indice(llave, competencia);//escribimos la entrada en el indice
                 maestro.writeInt(llave);//escribimos la regla en el maestro
-                System.out.println("ingrese las premisas separadas por una coma p1,p2,p3");
-                premisa = scan.next();
-                aux = premisa.split(",");
 
-                for (int i = 0; i < aux.length; i++)
-                    premisas[i] = aux[i];
+                int cant = 0;
+                System.out.println("Cantidad de puntos criticos (funciones), maximo 8:");
+                do {
+                    ca = scan.next();
+                } while (!validarNumerico(ca));
+                cant = Integer.parseInt(ca);
 
-                for (int n = 0; n < configuracion; n++) {
-                    if (premisas[n] != null) {
-                        dato = premisas[n];
-                        datos = new StringBuffer(dato);
-                        datos.setLength(largo);
-                        prueba = datos.toString();
-                        maestro.writeChars(prueba);
-                    } else {
-                        dato = "Pv";
-                        datos = new StringBuffer(dato);
-                        datos.setLength(largo);
-                        prueba = datos.toString();
-                        maestro.writeChars(prueba);
-                    }
-                }//fin for cuando salga del for ya tiene que haber escrito todas las premisas ingresadas
-                dato = "->";
-                datos = new StringBuffer(dato);
-                datos.setLength(largo);
-                prueba = datos.toString();
-                maestro.writeChars(prueba);
-                System.out.println("ingrese la salida !solo una premisa!");
-                dato = scan.next();
-                datos = new StringBuffer(dato);
-                datos.setLength(largo);
-                prueba = datos.toString();
-                maestro.writeChars(prueba);
+                // guarda en arreglos los datos que serán escritos en lso archivos
+                for (int i = 0; i < cant; i++) {
+
+                    System.out.println("Ingrese la etiqueta para el punto critico " + (i+1));
+                    etiqueta = scan.nextLine();
+                    etiqueta = scan.nextLine();
+                    etiqs[i] = etiqueta;
+
+                    System.out.println("Ingresa el valor del punto critico " + (i + 1) + " (si son 2 puntos, separar por comas)");
+                    pc = scan.next();
+                    aux = pc.split(",");
+
+                    if(aux.length > 0)
+                        if(validarNumerico(aux[0])) {
+                            if(i == 0 && aux.length == 1){
+                                pcs[0] = 0;
+                                pcs[1] = Integer.parseInt(aux[0]);
+                            } else if(i == 0 && aux.length > 1){
+                                pcs[0] = Integer.parseInt(aux[0]);
+                            } else {
+                                pcs[i * 2] = Integer.parseInt(aux[0]);
+                                pcs[(i * 2) + 1] = -1;
+                            }
+                        }
+                    if(aux.length > 1)
+                        if(validarNumerico(aux[1]))
+                            pcs[(i * 2) + 1] = Integer.parseInt(aux[1]);
+                }
+
+                System.out.println(competencia);
+                for (int i = 0; i < 8; i++) {
+                    if(etiqs[i] != null)
+                        System.out.println(etiqs[i] + ", Rango de [" + pcs[(i*2)] + ", " + pcs[(i*2)+1] + "]");
+                    else
+                        System.out.println("No hay etiqueta " + (i+1));
+                }
+
                 maestro.close();
                 System.out.println("Presione 0 para terminar o 1 para ingresar una nueva regla");
                 bandera = scan.nextInt();
@@ -82,9 +104,20 @@ public class Maestro {
 
     }
 
+
+    static private boolean validarNumerico(String x){
+        if(x.matches("^[1-9]\\d*$"))
+            return true;
+        else{
+            if(!x.equals(""))
+                System.out.println("El valor ingresado no es númerico.");
+            return false;
+        }
+    }
+
     /*
     public void escribirMaestro() throws IOException {
-        int bandera = 1, llave, n;
+        int bandera = 1, existente, n;
         int[] res;
         String[] aux;
 
@@ -99,15 +132,15 @@ public class Maestro {
             tamaño = Maestro.length();
             Maestro.seek(tamaño);//nos vamos hasta el final del archivo
             System.out.println("ingrese el numero de regla a ingresar");
-            llave = entrada.nextInt();
-            res = indice.buscarIndice(llave);
+            existente = entrada.nextInt();
+            res = indice.buscarIndice(existente);
             if (res[0] == 1) {
                 System.out.println("Regla ya existente");
                 System.out.println("Presione 0 para terminar o 1 para ingresar una nueva regla");
                 bandera = entrada.nextInt();
             } else {
-                indice.escribir_indice(llave);//escribimos la entrada en el indice
-                Maestro.writeInt(llave);//escribimos la regla en el maestro
+                indice.escribir_indice(existente);//escribimos la entrada en el indice
+                Maestro.writeInt(existente);//escribimos la regla en el maestro
                 System.out.println("ingrese las premisas separadas por una coma p1,p2,p3");
                 premisa = entrada.next();
                 aux = premisa.split(",");
@@ -123,7 +156,7 @@ public class Maestro {
                         datos.setLength(largo);
                         prueba = datos.toString();
                         Maestro.writeChars(prueba);
-                        iPremisas.EscribirPremisa(prueba, llave);
+                        iPremisas.EscribirPremisa(prueba, existente);
                     } else {
                         dato = "Pv";
                         datos = new StringBuffer(dato);
@@ -155,7 +188,7 @@ public class Maestro {
         int i, c;
         char[] dato = new char[largo];
         RandomAccessFile file = new RandomAccessFile("Maestro", "rw");
-        file.readInt();//lee la llave
+        file.readInt();//lee la existente
         for (i = 0; i < configuracion; i++) {
             for (c = 0; c < dato.length; c++) {
                 dato[c] = file.readChar();
@@ -172,7 +205,7 @@ public class Maestro {
         return desp;
     }
 
-    public void buscarReglaAleatorio(int llave) throws IOException {
+    public void buscarReglaAleatorio(int existente) throws IOException {
         RandomAccessFile file;
         int posicion, i, dt, key, c;
         char temp;
@@ -182,7 +215,7 @@ public class Maestro {
         char[] premisa = new char[largo];
         String[] premisas = new String[configuracion];//del tamaño de las configuraciones*2
         String puente, salida = "", predicado = "";
-        pos = indice.buscarIndice(llave);
+        pos = indice.buscarIndice(existente);
         posicion = pos[1];
         System.out.println("posicion:" + posicion);
         if (pos[0] == -1) {
@@ -225,15 +258,15 @@ public class Maestro {
     }
 
     public void borrarRegistro() throws IOException {
-        int llave;
+        int existente;
         Scanner entrada = new Scanner(System.in);
         System.out.println("ingrese la regla a borrar");
-        llave = entrada.nextInt();
-        indice.borrarIndice(llave);
+        existente = entrada.nextInt();
+        indice.borrarIndice(existente);
     }
 
     public void actualizarRegistro() throws IOException {
-        int llave, pos, n;
+        int existente, pos, n;
         int[] posicion;
         String[] aux, premisas = new String[configuracion];;
         StringBuffer datos;
@@ -243,9 +276,9 @@ public class Maestro {
         Scanner entrada = new Scanner(System.in);
         indice in = new indice();
 
-        llave = Integer.parseInt(JOptionPane.showInputDialog(null, "Escribe el numero de regla a actualizar", "Numero de Regla", 1));
+        existente = Integer.parseInt(JOptionPane.showInputDialog(null, "Escribe el numero de regla a actualizar", "Numero de Regla", 1));
 
-        posicion = in.buscarIndice(llave);
+        posicion = in.buscarIndice(existente);
         longitud = desplazamiento();
         pos = posicion[1];
         desplazamiento = (pos - 1) * longitud;
@@ -292,11 +325,11 @@ public class Maestro {
 
 
     public void buscar_ArchivoPC(int num_etiqueta) {
-        //leer e ir comparando con el numero de etiqueta hasta encontrarlo
+        //leer e ir comparando con el numero de competencia hasta encontrarlo
         valor_X1=0;//primer punto critico encontrado
 
         num_etiqueta++;
-        //leer e ir comparando con el numero de etiqueta hasta encontrarlo
+        //leer e ir comparando con el numero de competencia hasta encontrarlo
         valor_XX2=0;//=//primer punto critico encontrado
 
     }
