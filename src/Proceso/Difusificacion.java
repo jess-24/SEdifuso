@@ -25,25 +25,23 @@ public class Difusificacion {
 
     }
 
-    public void calculaT(int puntoC1, int puntoC2_1, int puntoC2_2, int puntoC3)
-    {
-        double traslape1,traslape2,traslape3,traslape4;
+    public double[][] calculaT(int[][] puntosC) {
+        double[][] traspales = new double[100][2];
+        double traslape1, traslape2, traslape3, traslape4;
         //primer rango de traslape
-        traslape1 = puntoC2_1-((puntoC2_1-puntoC1)*0.75);
-        traslape2 = puntoC1+((puntoC2_1-puntoC1)*0.75);
-        if (puntoC2_2!=0) {
+        //traslape1 = puntoC2_1-((puntoC2_1-puntoC1)*0.75);
+        //traslape2 = puntoC1+((puntoC2_1-puntoC1)*0.75);
+        if (/*puntoC2_2!=0*/true) {
             //segundo rango
-            traslape3 = puntoC3-((puntoC3-puntoC2_1)*0.75);
-            traslape4 = puntoC2_1+((puntoC3-puntoC2_1)*0.75);
-        }
-        else
-        {
+            //traslape3 = puntoC3-((puntoC3-puntoC2_1)*0.75);
+            //traslape4 = puntoC2_1+((puntoC3-puntoC2_1)*0.75);
+        } else {
             //segundo rango con 2 puntos criticos
-            traslape3 = puntoC3-((puntoC3-puntoC2_2)*0.75);
-            traslape3 = puntoC2_2+((puntoC3-puntoC2_2)*0.75);
+            //traslape3 = puntoC3-((puntoC3-puntoC2_2)*0.75);
+            //traslape3 = puntoC2_2+((puntoC3-puntoC2_2)*0.75);
         }
 
 
-
+        return traspales;
     }
 }

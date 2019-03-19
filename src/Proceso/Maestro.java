@@ -65,7 +65,7 @@ public class Maestro {
 
                     System.out.println("Ingresa el valor del punto critico " + (i + 1) + " (si son 2 puntos, separar por comas)");
                     pc = scan.next();
-                    aux = it pc.split(",");
+                    //aux = it pc.split(",");
 
                     if(aux.length > 0)
                         if(validarNumerico(aux[0])) {
