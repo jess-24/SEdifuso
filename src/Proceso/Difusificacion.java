@@ -27,7 +27,20 @@ public class Difusificacion {
 
     public double[][] calculaT(int[][] puntosC) {
         double[][] traspales = new double[100][2];
-        double traslape1, traslape2, traslape3, traslape4;
+
+        //double traslape1, traslape2, traslape3, traslape4;
+        int i=0,j=0;
+        for(i=0;i<=puntosC.length; i++)
+        {
+            if (puntosC[0][0]==0)
+            {
+                //aqui van las operaciones para calcular los traslapes
+            }
+            for (j=0;j<=puntosC.length; j++)
+            {
+
+            }
+        }
         //primer rango de traslape
         //traslape1 = puntoC2_1-((puntoC2_1-puntoC1)*0.75);
         //traslape2 = puntoC1+((puntoC2_1-puntoC1)*0.75);

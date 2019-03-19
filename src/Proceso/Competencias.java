@@ -2,6 +2,8 @@ package Proceso;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Competencias extends JFrame {
     private JPanel panel_competencias;
@@ -13,6 +15,16 @@ public class Competencias extends JFrame {
     private JTextField textField4;
     private JButton guardarPuntosCriticosButton;
 
+
+    public Competencias() {
+        agregarNuevaCompetenciaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AddCompetencias ad= new AddCompetencias();
+                ad.AddCompetencias();
+            }
+        });
+    }
 
     public void Competencias()
     {

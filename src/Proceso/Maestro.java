@@ -2,7 +2,7 @@ package Proceso;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.util.Scanner;
+import java.util.*;
 
 public class Maestro {
     int num_etiqueta;
@@ -65,7 +65,7 @@ public class Maestro {
 
                     System.out.println("Ingresa el valor del punto critico " + (i + 1) + " (si son 2 puntos, separar por comas)");
                     pc = scan.next();
-                    //aux = it pc.split(",");
+                    aux = pc.split(",");
 
                     if(aux.length > 0)
                         if(validarNumerico(aux[0])) {
