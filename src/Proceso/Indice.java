@@ -24,7 +24,7 @@ public class Indice {
 
     public Indice buscarIndice(int llave)throws IOException {
         indice = new RandomAccessFile("indice.dat","rw");
-        int llaveLeida, posicion = -1, i, existe = -1;
+        int llaveLeida, posicion = -1, existe = -1;
         long tamaño = indice.length();
         String competencia = "";
 
@@ -32,21 +32,22 @@ public class Indice {
             existe = -1;
             posicion = 1;
         } else {
-            for (i = 0; i < tamaño/8 ; i++){
+            while(tamaño > 0 && indice.getFilePointer() < indice.length()){
                 llaveLeida = indice.readInt();
                 if(llave == llaveLeida){
                     existe = 1;
-                    posicion = i + 1;
-                    indice.readInt();
+                    posicion = indice.readInt();
                     for (int j = 0; j < 50; j++)
                         competencia = competencia + indice.readChar();
                     break;
                 } else {
                     existe = -1;
-                    posicion = i + 1;
-                    indice.readInt();
+                    posicion = indice.readInt();
+                    for (int j = 0; j < 50; j++)
+                        competencia = competencia + indice.readChar();
                 }
-            }//fin del for
+                competencia = "";
+            }
         }//fin else
 
         indice.close();
@@ -62,7 +63,7 @@ public class Indice {
         if(tamaño != 0){
             System.out.println("Llave\tPosicion\tCompetencia");
             while(indice.getFilePointer() < tamaño) {
-                System.out.print(indice.readInt() + "\t" + indice.readInt() + "\t");
+                System.out.print(indice.readInt() + "\t\t" + indice.readInt() + "\t\t\t");
                 for (int j = 0; j < 50; j++) {
                     System.out.print(indice.readChar());
                 }
@@ -80,28 +81,27 @@ public class Indice {
         Indice respuesta;
         RandomAccessFile file;
         respuesta = buscarIndice(llave);
+        long pos = 0;
+
         if(respuesta.getExistente() == -1){
             file = new RandomAccessFile("indice.dat","rw");
             longitud = file.length();
             file.seek(longitud);
+
+            if (longitud > 0)
+                pos = longitud / desplazamiento();
+
             file.writeInt(llave);
+            file.writeInt((int)(pos + 1));
 
-            if(respuesta.getPosicion() == 1)
-                file.writeInt(1);
-            else
-                file.writeInt(respuesta.getPosicion() + 1);
-
-            for (int i = 0; i < etiqueta.length(); i++) {
+            for (int i = 0; i < etiqueta.length(); i++)
                 file.writeChar(etiqueta.charAt(i));
-            }
-            for (int i = 0; i < 50 - etiqueta.length(); i++) {
+            for (int i = 0; i < 50 - etiqueta.length(); i++)
                 file.writeChar(' ');
-            }
 
             file.close();
             escrito = true;
-        }
-        else
+        } else
             escrito = false;
         return escrito;
     }

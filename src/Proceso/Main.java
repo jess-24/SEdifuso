@@ -29,10 +29,14 @@ public class Main {
 
             switch (s){
                 case 1:
-                    //evaluar();
+                    System.out.println("Escribe la llave competencia a buscar:");
+                    do{
+                        llave = scan.nextLine();
+                    } while(!validarNumerico(llave));
+                    maestro.buscarCompetencia(Integer.parseInt(llave));
                     break;
                 case 2:
-                    System.out.println("Escribe la llave de la regla por escribir:");
+                    System.out.println("Escribe la llave de la competencia por escribir:");
                     do{
                         llave = scan.nextLine();
                     } while(!validarNumerico(llave));
@@ -44,6 +48,7 @@ public class Main {
                 case 5:
                     indice.leerSecuencial();
             }
+            llave = "";
         }while(s < 7);
     }
 
@@ -78,9 +83,9 @@ public class Main {
 
     public static void main(String [] args) throws IOException {
        interfaz i = new interfaz();
-       i.interfaz();
+       //i.interfaz();
         Difusificacion d = new Difusificacion();
-        //menu();
+        menu();
     }
 
 

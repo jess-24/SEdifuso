@@ -1,5 +1,6 @@
 package Proceso;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.*;
@@ -15,12 +16,9 @@ public class Maestro {
     RandomAccessFile maestro;
     long tamaño;
     Indice res;
-    int bandera = 1, configuracion = 4, largo = 2, llave;
-    String aux[], premisas[];
+    int bandera = 1, llave;
+    String aux[];
     Scanner scan = new Scanner(System.in);
-
-    String premisa, salida, prueba, dato;
-    StringBuffer datos;
 
     String competencia, ca, etiqueta, pc;
     boolean band;
@@ -84,14 +82,29 @@ public class Maestro {
                             pcs[(i * 2) + 1] = Integer.parseInt(aux[1]);
                 }
 
+                for (int i = cant; i < 8; i++) {
+                    pcs[(i * 2)] = -1;
+                    pcs[(i * 2) + 1] = -1;
+                }
+
+                for (int i = 0; i < 8; i++) {
+                    for (int j = 0; j < 15; j++) {
+                        if (etiqs[i] != null)
+                            if(j < etiqs[i].length())
+                                maestro.writeChar(etiqs[i].charAt(j));
+                            else
+                                maestro.writeChar(' ');
+                        else
+                            maestro.writeChar(' ');
+                    }
+                    maestro.writeInt(pcs[(i*2)]);
+                    maestro.writeInt(pcs[(i*2) + 1]);
+                }
                 System.out.println(competencia);
                 for (int i = 0; i < 8; i++) {
                     if(etiqs[i] != null)
                         System.out.println(etiqs[i] + ", Rango de [" + pcs[(i*2)] + ", " + pcs[(i*2)+1] + "]");
-                    else
-                        System.out.println("No hay etiqueta " + (i+1));
                 }
-
                 maestro.close();
                 System.out.println("Presione 0 para terminar o 1 para ingresar una nueva regla");
                 bandera = scan.nextInt();
@@ -100,8 +113,83 @@ public class Maestro {
     }
 
 
-    public void leerSecuencial(){
+    public void leerSecuencial() throws IOException {
+        maestro = new RandomAccessFile("maestro.dat", "rw");
+        long tamaño = maestro.length();
+        String competencia = "";
 
+        if(tamaño > 0) {
+            while(maestro.getFilePointer() < tamaño) {
+                System.out.print(maestro.readInt() + "\t");
+                for (int j = 0; j < 8; j++) {
+                    for (int k = 0; k < 15; k++) {
+                        System.out.print(maestro.readChar());
+                    }
+                    System.out.print("\t" + maestro.readInt() + "\t");
+                    System.out.print(maestro.readInt() + "\t");
+                }
+                System.out.print("\n");
+            }
+            System.out.println(competencia);
+        } else {
+            System.out.println("El archivo está vacio");
+        }
+        maestro.close();
+    }
+
+    public long desplazamiento() throws IOException{
+        long despl;
+        maestro = new RandomAccessFile("maestro.dat", "rw");
+        maestro.readInt();
+        for (int j = 0; j < 8; j++) {
+            for (int k = 0; k < 15; k++)
+                maestro.readChar();
+            maestro.readInt();
+            maestro.readInt();
+        }
+        despl = maestro.getFilePointer();
+        return despl;
+    }
+
+    public int[][] buscarCompetencia(int llave) throws IOException {
+        int puntos_criticos[][] = new int[8][2];
+        maestro = new RandomAccessFile("maestro.dat", "rw");
+        Indice inx = indice.buscarIndice(llave);
+        System.out.println("Existe: " + inx.getExistente() + "\nPosicion: " + inx.getPosicion() + "\nCompetencia: " + inx.getCompetencia());
+
+        long tamaño = maestro.length();
+        System.out.println("Despl: " + desplazamiento());
+        System.out.println("Posic: " + inx.getPosicion());
+        System.out.println("Seek : " + desplazamiento() * (inx.getPosicion()-1));
+        System.out.println("Tamañ: " + tamaño);
+
+        long seek = desplazamiento() * (inx.getPosicion() - 1);
+        if(tamaño > 0){
+            maestro.seek(seek);
+        }
+
+        System.out.println("puntero del archivo: " + maestro.getFilePointer());
+
+        if(inx.getExistente() != -1){
+            maestro.readInt();
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 15; j++)
+                    maestro.readChar();
+                puntos_criticos[i][0] = maestro.readInt();
+                puntos_criticos[i][1] = maestro.readInt();
+            }
+        } else {
+            System.out.println("No existe una competencia con esa llave");
+        }
+
+        System.out.println("puntero del archivo: " + maestro.getFilePointer());
+
+        for (int i = 0; i < 8; i++) {
+                System.out.println("[" + puntos_criticos[i][0] + "] [" + puntos_criticos[i][1] + "]");
+
+        }
+
+        return puntos_criticos;
     }
 
 
