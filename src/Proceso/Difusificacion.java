@@ -3,7 +3,7 @@ package Proceso;
 import java.util.*;
 
 public class Difusificacion {
-    int entrada_real;
+    double entrada_real;
     int num_var;
     double valor_X1;
     double valor_Y1;
@@ -11,7 +11,7 @@ public class Difusificacion {
     double valor_Y2;
     private Archivos archivos = new Archivos();
 
-    public void setEntradaReal(int entrada_real, int num_var) {
+    public void setEntradaReal(double entrada_real, int num_var) {
         this.entrada_real = entrada_real;
         this.num_var = num_var;
 
@@ -23,11 +23,15 @@ public class Difusificacion {
 
         }
     }
-
-    public void calcularM(double valor_X1, int valor_Y1, double valor_X2, double valor_Y2) {
-
+    double m;
+    public void calcularM(double valor_X1, int valor_Y1, double valor_X2, double valor_Y2,double entrada_real) {
+        m=(valor_Y2-valor_Y1)/(valor_X2-valor_X1);
+        y_grado_membresia=m*entrada_real - (m*valor_X1 +(valor_Y1));
     }
-
+    public double getGradoMem_salidaDifusa(){
+        return y_grado_membresia;
+    }
+    double y_grado_membresia;
     public double[][] calculaT(int[][] puntosC) {
         double[][] puntosCO = new double[100][2];
         double[][] traspales = new double[100][2];
