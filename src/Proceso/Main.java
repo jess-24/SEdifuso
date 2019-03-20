@@ -16,11 +16,11 @@ public class Main {
         do{
             System.out.println("1. Evaluar.");
             System.out.println("2. Agregar nuevas variables.");
-            System.out.println("3. Cantidad de competencias.");
+            System.out.println("3. Editar variables.");
             System.out.println("-");
             System.out.println("4. Leer archivo \"Maestro\" (puntos críticos).");
             System.out.println("5. Leer archivo \"Indice\".");
-            System.out.println("6. Obtener todas las competencias.");
+            System.out.println("6. Leer archivo \"Traslapes\".");
             System.out.println("-");
             System.out.println("7. Salir.");
             System.out.println("-\nElige una opción:");
@@ -42,18 +42,11 @@ public class Main {
                     } while(!validarNumerico(llave));
                     maestro.escribirVariable(Integer.parseInt(llave));
                     break;
-                case 3:
-                    System.out.println("Cantidad de competencias = " + maestro.cantidad_Competencias());
-                    break;
                 case 4:
                     maestro.leerSecuencial();
                     break;
                 case 5:
                     indice.leerSecuencial();
-                    break;
-                case 6:
-                    indice.obtenerTodasCompetencias();
-                    break;
             }
             llave = "";
         }while(s < 7);
@@ -89,11 +82,10 @@ public class Main {
     }
 
     public static void main(String [] args) throws IOException {
-        interfaz i = new interfaz();
-        //i.interfaz();
+       interfaz i = new interfaz();
+       //i.interfaz();
         Difusificacion d = new Difusificacion();
         menu();
-
     }
 
 
