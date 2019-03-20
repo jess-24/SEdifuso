@@ -6,13 +6,7 @@ import java.io.RandomAccessFile;
 import java.util.*;
 
 public class Maestro {
-    int num_etiqueta;
-    double valor_X1;
-    double valor_X2;
-    double valor_XX1;
-    double valor_XX2;
     Indice indice = new Indice();
-    int longitud = 68;
     RandomAccessFile maestro;
     long tamaño;
     Indice res;
@@ -151,8 +145,9 @@ public class Maestro {
         return despl;
     }
 
-    public int[][] buscarCompetencia(int llave) throws IOException {
-        int puntos_criticos[][] = new int[8][2];
+    public ArrayList<Competencia> buscarCompetencia(int llave) throws IOException {
+        ArrayList<Competencia> comps = new ArrayList<Competencia>();
+        String etiqueta = "";
         maestro = new RandomAccessFile("maestro.dat", "rw");
         Indice inx = indice.buscarIndice(llave);
         System.out.println("Existe: " + inx.getExistente() + "\nPosicion: " + inx.getPosicion() + "\nCompetencia: " + inx.getCompetencia());
@@ -174,9 +169,9 @@ public class Maestro {
             maestro.readInt();
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < 15; j++)
-                    maestro.readChar();
-                puntos_criticos[i][0] = maestro.readInt();
-                puntos_criticos[i][1] = maestro.readInt();
+                    etiqueta = etiqueta + maestro.readChar();
+                comps.add(new Competencia(etiqueta, maestro.readInt(), maestro.readInt()));
+                etiqueta = "";
             }
         } else {
             System.out.println("No existe una competencia con esa llave");
@@ -185,13 +180,28 @@ public class Maestro {
         System.out.println("puntero del archivo: " + maestro.getFilePointer());
 
         for (int i = 0; i < 8; i++) {
-                System.out.println("[" + puntos_criticos[i][0] + "] [" + puntos_criticos[i][1] + "]");
-
+            System.out.println("Etiqueta: " + comps.get(i).getEtiqueta());
+            System.out.println("Punto 1: " + comps.get(i).getP1());
+            System.out.println("Punto 2: " + comps.get(i).getP2());
         }
 
-        return puntos_criticos;
+        return comps;
     }
 
+    public int cantidad_Competencias() throws IOException {
+        maestro = new RandomAccessFile("maestro.dat", "rw");
+        long tamaño = maestro.length();
+        String competencia = "";
+        int cant_com = 0;
+
+        if(tamaño > 0) {
+           cant_com = (int) (tamaño / desplazamiento());
+        } else {
+            System.out.println("El archivo está vacio");
+        }
+        maestro.close();
+        return cant_com;
+    }
 
     static private boolean validarNumerico(String x){
         if(x.matches("^[1-9]\\d*$"))
