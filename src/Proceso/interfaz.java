@@ -7,7 +7,10 @@ import javax.swing.text.html.parser.Parser;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Scanner;
 
 public class interfaz extends JFrame{
     private JButton editarVariablesButton;
@@ -25,16 +28,16 @@ public class interfaz extends JFrame{
         evaluarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 Evaluar evaluar = new Evaluar();
                 evaluar.Evaluar(entrada_real);
             }
         });
+
         agregarNuevasVariablesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Competencias c = new Competencias();
-                c.Competencias();
+                AddCompetencias c = new AddCompetencias();
+                c.AddCompetencias();
                 /*
                 int llave =  Integer.parseInt( JOptionPane.showInputDialog(null,"Llave de la regla a escribir:"));
                 Maestro m = new Maestro();
@@ -108,5 +111,7 @@ public class interfaz extends JFrame{
 
 
     }
+
+
 
 }

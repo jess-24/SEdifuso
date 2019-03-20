@@ -150,20 +150,10 @@ public class Maestro {
         String etiqueta = "";
         maestro = new RandomAccessFile("maestro.dat", "rw");
         Indice inx = indice.buscarIndice(llave);
-        System.out.println("Existe: " + inx.getExistente() + "\nPosicion: " + inx.getPosicion() + "\nCompetencia: " + inx.getCompetencia());
+        long tamaño = maestro.length(), seek = desplazamiento() * (inx.getPosicion() - 1);
 
-        long tamaño = maestro.length();
-        System.out.println("Despl: " + desplazamiento());
-        System.out.println("Posic: " + inx.getPosicion());
-        System.out.println("Seek : " + desplazamiento() * (inx.getPosicion()-1));
-        System.out.println("Tamañ: " + tamaño);
-
-        long seek = desplazamiento() * (inx.getPosicion() - 1);
-        if(tamaño > 0){
+        if(tamaño > 0)
             maestro.seek(seek);
-        }
-
-        System.out.println("puntero del archivo: " + maestro.getFilePointer());
 
         if(inx.getExistente() != -1){
             maestro.readInt();
@@ -173,11 +163,17 @@ public class Maestro {
                 comps.add(new Competencia(etiqueta, maestro.readInt(), maestro.readInt()));
                 etiqueta = "";
             }
-        } else {
+        } else
             System.out.println("No existe una competencia con esa llave");
-        }
 
-        System.out.println("puntero del archivo: " + maestro.getFilePointer());
+        int n = comps.size();
+        for (int i = 0; i < n-1; i++)
+            for (int j = 0; j < n-i-1; j++)
+                if (comps.get(j).getP1() > comps.get(j+1).getP1() && comps.get(j).getP1() != -1 && comps.get(j+1).getP1() != -1) {
+                    Competencia temp = comps.get(j);
+                    comps.set(j, comps.get(j + 1));
+                    comps.set(j + 1, temp);
+                }
 
         for (int i = 0; i < 8; i++) {
             System.out.println("Etiqueta: " + comps.get(i).getEtiqueta());
