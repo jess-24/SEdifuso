@@ -13,6 +13,7 @@ public class Evaluar {
     Difusificacion dif;
     public double entrada_real = 0;
     ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
+    //Maestro m = new Maestro();
     public Evaluar(Difusificacion dif){
         this.dif=dif;
     }

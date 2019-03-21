@@ -54,7 +54,7 @@ public class interfaz extends JFrame{
                  {
                      JOptionPane.showMessageDialog(null,"" +
                              ""+comp.get(j).getCompetencia()+"\n" +
-                             "Etiqueta: "+variable_salida.get(j).getVariables().get(j).getEtiqueta()+" Entrada Real: "+variable_salida.get(j).getVariables().get(j).getX()+"  Membresia: "+variable_salida.get(j).getVariables().get(j).getY()
+                             "Etiqueta: "+variable_salida.get(j).getVariables().get(0).getEtiqueta()+" Entrada Real: "+variable_salida.get(j).getVariables().get(0).getX()+"  Membresia: "+variable_salida.get(j).getVariables().get(0).getY()
                      );
                  }
 
