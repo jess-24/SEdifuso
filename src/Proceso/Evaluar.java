@@ -17,7 +17,6 @@ public class Evaluar {
         this.dif=dif;
     }
     public ArrayList<Variable> Evaluar(int entrara_real, ArrayList<Competencia> puntosC) {
-    dif=new Difusificacion()
 
 for (int i=0;i<puntosC.size(); i++)
 {
