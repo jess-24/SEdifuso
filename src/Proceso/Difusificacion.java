@@ -13,6 +13,7 @@ public class Difusificacion {
     ArrayList<Competencia> variable;
     Maestro maestro;
     Evaluar evaluar;
+    ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
 
     public void setEntradaReal(double entrada_real, int num_variable) {
         this.entrada_real = entrada_real;
@@ -27,11 +28,11 @@ public class Difusificacion {
             for (int fila = 0; fila < 8; fila++) {
                 if(entrada_real>= traslapes[fila][col] && entrada_real<=traslapes[fila][col+1]){
                     num_etiqueta = fila + 1;
-                    evaluarX_En_Traslape(entrada_real,traslapes[fila][col+1],traslapes[fila][col],num_etiqueta,variable);
+                    varibles_difisas=evaluarX_En_Traslape(entrada_real,traslapes[fila][col+1],traslapes[fila][col],num_etiqueta,variable);
 
                 }else {
                         evaluar=new Evaluar(this);
-                        evaluar.Evaluar_M(entrada_real,variable);
+                        varibles_difisas=evaluar.Evaluar_M(entrada_real,variable);
                 }
             }
 
@@ -39,8 +40,9 @@ public class Difusificacion {
             e.printStackTrace();
         }
     }
-    public void evaluarX_En_Traslape(double entrada_real,double valor_X2, double valor_XX1,int num_etiqueta,ArrayList<Competencia> variable){
+    public ArrayList<Variable> evaluarX_En_Traslape(double entrada_real,double valor_X2, double valor_XX1,int num_etiqueta,ArrayList<Competencia> variable){
         double valor_XX2;
+        ArrayList<Variable> var_difisas = new ArrayList<Variable>();
         String etiqueta=null,etiquetaAux=null;
         valor_X1=variable.get(num_etiqueta).getP2();
         etiqueta=variable.get(num_etiqueta).getEtiqueta();
@@ -48,7 +50,18 @@ public class Difusificacion {
         etiquetaAux=variable.get((num_etiqueta+1)).getEtiqueta();
 
         calcularM(valor_X1, 1, valor_X2, 0,entrada_real,etiqueta);
+        var_difisas.add(new Variable(etiqueta,entrada_real,getGradoMem_salidaDifusa()));
         calcularM(valor_XX1, 0, valor_XX2, 1,entrada_real,etiquetaAux);
+        var_difisas.add(new Variable(etiquetaAux,entrada_real,getGradoMem_salidaDifusa()));
+        for (int t=0;t<variable.size();t++)
+        {
+            if (!variable.get(t).getEtiqueta().equals(etiqueta))
+            {
+                var_difisas.add(new Variable(variable.get(t).getEtiqueta(),entrada_real,0));
+            }
+
+        }
+        return var_difisas;
     }
     double m;
     public void calcularM(double valor_X1, int valor_Y1, double valor_X2, double valor_Y2,double entrada_real,String etiqueta) {
