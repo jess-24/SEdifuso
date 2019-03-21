@@ -3,19 +3,21 @@ package Proceso;
 import java.util.ArrayList;
 
 public class Evaluar {
-    public int X,X2,posicion;
-    public int x1,x2;
+    public int X,X2;
+    public int posicion;
+    public double x1,x2;
 
     public double membrecia,y1,y2,Y;
     public String etiqueta;
     public Boolean bandera=false;
-
+    Difusificacion dif;
     public int entrada_real = 0;
     ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
+    public Evaluar(Difusificacion dif){
+        this.dif=dif;
+    }
     public ArrayList<Variable> Evaluar(int entrara_real, ArrayList<Competencia> puntosC) {
-
-
-
+    dif=new Difusificacion()
 
 for (int i=0;i<puntosC.size(); i++)
 {
@@ -66,9 +68,8 @@ for (int i=0;i<puntosC.size(); i++)
 
 if (bandera==false)
 {
-    Difusificacion dif= new Difusificacion();
     ArrayList<Competencia> puntos = new ArrayList<Competencia>();
-    int[][] rangos_de_traspales = dif.calculaT(puntos);
+    double[][] rangos_de_traspales = dif.calculaT(puntos);
     for (int i = 0; i <= rangos_de_traspales.length; i++)
     {
 
@@ -130,7 +131,7 @@ if (bandera==false)
 return varibles_difisas;
     }//metodo
 
-    public double Pendiente(int x,int x1,double y1,int x2,double y2){
+    public double Pendiente(double x,double x1,double y1,double x2,double y2){
         double y = 0.0;
         y = ((x-x1)*(y2-y1)/(x2-x1)) + y1;
         return y;

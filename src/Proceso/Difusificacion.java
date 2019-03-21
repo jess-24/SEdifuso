@@ -12,7 +12,7 @@ public class Difusificacion {
     double valor_Y2;
     ArrayList<Competencia> variable;
     Maestro maestro;
-    private Archivos archivos = new Archivos();
+    Evaluar evaluar;
 
     public void setEntradaReal(double entrada_real, int num_variable) {
         this.entrada_real = entrada_real;
@@ -54,7 +54,9 @@ public class Difusificacion {
         m=(valor_Y2-valor_Y1)/(valor_X2-valor_X1);
         y_grado_membresia=m*entrada_real - (m*valor_X1 +(valor_Y1));
     }
-    public double getGradoMem_salidaDifusa(){
+
+
+public double getGradoMem_salidaDifusa(){
         return y_grado_membresia;
     }
     double y_grado_membresia;
