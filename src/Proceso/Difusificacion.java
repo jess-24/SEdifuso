@@ -15,9 +15,11 @@ public class Difusificacion {
     Evaluar evaluar;
     ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
 
-    public ArrayList<Variable> setEntradaReal(double entrada_real, int num_variable) {
+    public ArrayList<Variable> setEntradaReal(int entrada_real, int num_variable) {
         this.entrada_real = entrada_real;
         this.num_variable = num_variable;
+        System.out.println(num_variable);
+        System.out.println(entrada_real);
         variable=new ArrayList<Competencia>();
         int num_etiqueta=0;
         //num_etiqueta es el numero de traslape en el que se encuentre la entrada real

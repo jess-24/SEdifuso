@@ -50,7 +50,13 @@ public class interfaz extends JFrame{
 
 
                 }
-
+                 for (int j=0;j<comp.size();j++)
+                 {
+                     JOptionPane.showMessageDialog(null,"" +
+                             ""+comp.get(j).getCompetencia()+"\n\n" +
+                             ""+variable_salida
+                     );
+                 }
 
                 /*
                 Evaluar evaluar = new Evaluar();

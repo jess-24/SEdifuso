@@ -85,7 +85,7 @@ public class Main {
        interfaz i = new interfaz();
        i.interfaz();
         Difusificacion d = new Difusificacion();
-        menu();
+        //menu();
     }
 
 
