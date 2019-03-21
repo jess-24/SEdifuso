@@ -48,7 +48,10 @@ public class Difusificacion {
         double valor_XX2;
         ArrayList<Variable> var_difisas = new ArrayList<Variable>();
         String etiqueta=null,etiquetaAux=null;
-        valor_X1=variable.get(num_etiqueta).getP2();
+        if(variable.get(num_etiqueta).getP2() == -1){
+            valor_X1=variable.get(num_etiqueta).gietP1();
+        }else{
+        valor_X1=variable.get(num_etiqueta).getP2();}
         etiqueta=variable.get(num_etiqueta).getEtiqueta();
         valor_XX2=variable.get((num_etiqueta+1)).getP1();
         etiquetaAux=variable.get((num_etiqueta+1)).getEtiqueta();
