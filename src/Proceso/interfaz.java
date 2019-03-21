@@ -25,10 +25,10 @@ public class interfaz extends JFrame{
         evaluarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+/*
                 Evaluar evaluar = new Evaluar();
                 evaluar.Evaluar(entrada_real);
-            }
+            */}
         });
         agregarNuevasVariablesButton.addActionListener(new ActionListener() {
             @Override
