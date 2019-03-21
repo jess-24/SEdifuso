@@ -115,7 +115,7 @@ public class interfaz extends JFrame{
             comp=in.obtenerTodasCompetencias();
         }catch (Exception ed){};
 
-        for(int i = 0; i < label.length; i++) {
+        for(int i = 0; i < comp.size(); i++) {
             label[i] = new JLabel();    //Llenamos el array de etiquetas
             text[i] = new JTextField();    //Llemanos el array de cajas de texto
             //(6) PROPIEDADES DE LOS CONTROLES
