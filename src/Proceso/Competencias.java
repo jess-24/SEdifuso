@@ -20,8 +20,7 @@ public class Competencias extends JFrame {
         agregarNuevaCompetenciaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AddCompetencias ad= new AddCompetencias();
-                ad.AddCompetencias();
+
             }
         });
     }

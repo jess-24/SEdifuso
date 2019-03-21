@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b88961e9-2398-45a3-853d-86b0791172bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Evaluar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Evaluar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Proceso/Competencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Competencias.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Proceso/Evaluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Evaluar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Proceso/interfaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/interfaz.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="56" column="238" lean-forward="true" selection-start-line="56" selection-start-column="238" selection-end-line="56" selection-end-column="238" />
+            <state relative-caret-position="251">
+              <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#764#772#0" expanded="true" />
@@ -66,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Proceso/Competencias.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+            <state relative-caret-position="324">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -89,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Proceso/Evaluar.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="146">
-              <caret line="139" column="8" lean-forward="true" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
+              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
               <folding>
                 <element signature="e#357#367#0" expanded="true" />
                 <element signature="e#442#443#0" expanded="true" />
@@ -188,13 +189,13 @@
         <option value="$PROJECT_DIR$/src/Proceso/Maestro.java" />
         <option value="$PROJECT_DIR$/src/Proceso/Variable.java" />
         <option value="$PROJECT_DIR$/src/Proceso/AddCompetencias.java" />
-        <option value="$PROJECT_DIR$/src/Proceso/Competencias.java" />
         <option value="$PROJECT_DIR$/src/Proceso/interfaz.form" />
         <option value="$PROJECT_DIR$/src/Proceso/variableSalida.java" />
         <option value="$PROJECT_DIR$/src/Proceso/Main.java" />
-        <option value="$PROJECT_DIR$/src/Proceso/interfaz.java" />
         <option value="$PROJECT_DIR$/src/Proceso/Difusificacion.java" />
         <option value="$PROJECT_DIR$/src/Proceso/Evaluar.java" />
+        <option value="$PROJECT_DIR$/src/Proceso/Competencias.java" />
+        <option value="$PROJECT_DIR$/src/Proceso/interfaz.java" />
       </list>
     </option>
   </component>
@@ -235,6 +236,20 @@
               <item name="SEdifuso" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Proceso" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEdifuso" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEdifuso" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Proceso" type="462c0819:PsiDirectoryNode" />
+              <item name="Competencias" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="SEdifuso" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEdifuso" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Proceso" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaz" type="e9f4de52:FormNode" />
             </path>
           </expand>
           <select />
@@ -423,11 +438,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553191295583</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="funciona pero a veces da algo asi -1.03944">
+      <created>1553193322522</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1553193322522</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86026000" />
+    <option name="totallyTimeSpent" value="86383000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -442,7 +464,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11513859" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11513859" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -452,7 +474,7 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.8459488" visible="true" weight="0.3531961" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.8459488" visible="true" weight="0.3531961" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -639,33 +661,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/Competencias.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Proceso/Competencia.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="56" column="238" lean-forward="true" selection-start-line="56" selection-start-column="238" selection-end-line="56" selection-end-column="238" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#764#772#0" expanded="true" />
-            <element signature="e#956#972#0" expanded="true" />
-            <element signature="e#1440#2547#0" expanded="true" />
-            <element signature="e#2546#2547#0" expanded="true" />
-            <element signature="e#1972#2535#0" expanded="true" />
-            <element signature="e#2534#2535#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -687,12 +686,35 @@
     <entry file="file://$PROJECT_DIR$/src/Proceso/Evaluar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
-          <caret line="139" column="8" lean-forward="true" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
           <folding>
             <element signature="e#357#367#0" expanded="true" />
             <element signature="e#442#443#0" expanded="true" />
             <element signature="e#470#471#0" expanded="true" />
             <element signature="e#2469#2482#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/Competencias.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#764#772#0" expanded="true" />
+            <element signature="e#956#972#0" expanded="true" />
+            <element signature="e#1440#2547#0" expanded="true" />
+            <element signature="e#2546#2547#0" expanded="true" />
+            <element signature="e#1972#2535#0" expanded="true" />
+            <element signature="e#2534#2535#0" expanded="true" />
           </folding>
         </state>
       </provider>

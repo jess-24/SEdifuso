@@ -66,8 +66,8 @@ public class interfaz extends JFrame{
         agregarNuevasVariablesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Competencias c = new Competencias();
-                c.Competencias();
+                AddCompetencias ad= new AddCompetencias();
+                ad.AddCompetencias();
                 /*
                 int llave =  Integer.parseInt( JOptionPane.showInputDialog(null,"Llave de la regla a escribir:"));
                 Maestro m = new Maestro();

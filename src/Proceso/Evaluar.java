@@ -137,7 +137,7 @@ if (bandera==false)
 
                     }
                 }
-        
+
     }
     Y=calcularM(x1,y1,x2,y2,entrada_real,"Etiqueta");
     //membrecia= Pendiente(entrada_real,x1,y1,x2,y2);
