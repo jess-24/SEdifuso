@@ -1,30 +1,56 @@
 package Proceso;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Difusificacion {
     double entrada_real;
-    int num_var;
+    int num_variable;
     double valor_X1;
     double valor_Y1;
     double valor_X2;
     double valor_Y2;
+    ArrayList<Competencia> variable;
+    Maestro maestro;
     private Archivos archivos = new Archivos();
 
-    public void setEntradaReal(double entrada_real, int num_var) {
+    public void setEntradaReal(double entrada_real, int num_variable) {
         this.entrada_real = entrada_real;
-        this.num_var = num_var;
+        this.num_variable = num_variable;
+        variable=new ArrayList<Competencia>();
+        int num_etiqueta=0;
+        //num_etiqueta es el numero de traslape en el que se encuentre la entrada real
+        try {
+            variable = maestro.buscarCompetencia(num_variable);
+            double [][] traslapes=calculaT(variable);
+            int col=0;
+            for (int fila = 0; fila < 8; fila++) {
+                if(entrada_real>= traslapes[fila][col] && entrada_real<=traslapes[fila][col+1]){
+                    num_etiqueta = fila + 1;
+                    evaluarX_En_Traslape(entrada_real,traslapes[fila][col+1],traslapes[fila][col],num_etiqueta,variable);
 
-        /*if (archivos.buscar_ArchivoTraslapes(entrada_real)) {
-            valor_X2 = archivos.getValor_X2();
-            calcularM(archivos.getValor_X1(), 1, archivos.getValor_X2(), 0);
-            calcularM(archivos.getValor_XX1(), 0, archivos.getValor_XX2(), 1);
-        } else {
+                }else {
+                        //llamar metodo de ARMANDO
+                }
+            }
 
-        }*/
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void evaluarX_En_Traslape(double entrada_real,double valor_X2, double valor_XX1,int num_etiqueta,ArrayList<Competencia> variable){
+        double valor_XX2;
+        String etiqueta=null,etiquetaAux=null;
+        valor_X1=variable.get(num_etiqueta).getP2();
+        etiqueta=variable.get(num_etiqueta).getEtiqueta();
+        valor_XX2=variable.get((num_etiqueta+1)).getP1();
+        etiquetaAux=variable.get((num_etiqueta+1)).getEtiqueta();
+
+        calcularM(valor_X1, 1, valor_X2, 0,entrada_real,etiqueta);
+        calcularM(valor_XX1, 0, valor_XX2, 1,entrada_real,etiquetaAux);
     }
     double m;
-    public void calcularM(double valor_X1, int valor_Y1, double valor_X2, double valor_Y2,double entrada_real) {
+    public void calcularM(double valor_X1, int valor_Y1, double valor_X2, double valor_Y2,double entrada_real,String etiqueta) {
         m=(valor_Y2-valor_Y1)/(valor_X2-valor_X1);
         y_grado_membresia=m*entrada_real - (m*valor_X1 +(valor_Y1));
     }
