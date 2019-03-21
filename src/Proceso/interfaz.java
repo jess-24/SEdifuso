@@ -7,6 +7,7 @@ import javax.swing.text.html.parser.Parser;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.AreaAveragingScaleFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -24,6 +25,9 @@ public class interfaz extends JFrame{
     private JMenuItem  indice, traslapes, secuencial;
     Maestro m = new Maestro();
     int entrada_real = 0, cantidad;
+    ArrayList<Indice> comp= new ArrayList<Indice>();
+    //ArrayList<Variable> variables_salida= new ArrayList<Variable>();
+    ArrayList<variableSalida> variable_salida = new ArrayList<variableSalida>();
     JLabel[] label;    //Declaración del array de etiquetas
     JTextField[] text;   //Declaración del array de cajas de texto
 
@@ -31,10 +35,24 @@ public class interfaz extends JFrame{
         cantidad= m.cantidad_Competencias();
         label = new JLabel[cantidad];
         text = new JTextField[cantidad];
+        Indice in = new Indice();
+        try {
+            comp=in.obtenerTodasCompetencias();
+        }catch (Exception ed){};
         evaluarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-/*
+                int[][] entradas = new int[comp.size()][2];
+                for (int i=0;i<comp.size();i++)
+                {
+                    Difusificacion difu= new Difusificacion();
+                    variable_salida.add(new variableSalida(comp.get(i).getExistente() , difu.setEntradaReal(Integer.parseInt(text[i].getText()),comp.get(i).getExistente())) );
+
+
+                }
+
+
+                /*
                 Evaluar evaluar = new Evaluar();
                 evaluar.Evaluar(entrada_real);
             */}
@@ -109,11 +127,9 @@ public class interfaz extends JFrame{
         });
         panel_izquierdo.setLayout(null);
         panel_derecho.setLayout(null);
-         Indice in = new Indice();
-        ArrayList<Indice> comp= new ArrayList<Indice>();
-        try {
-            comp=in.obtenerTodasCompetencias();
-        }catch (Exception ed){};
+
+
+
 
         for(int i = 0; i < comp.size(); i++) {
             label[i] = new JLabel();    //Llenamos el array de etiquetas

@@ -15,7 +15,7 @@ public class Difusificacion {
     Evaluar evaluar;
     ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
 
-    public void setEntradaReal(double entrada_real, int num_variable) {
+    public ArrayList<Variable> setEntradaReal(double entrada_real, int num_variable) {
         this.entrada_real = entrada_real;
         this.num_variable = num_variable;
         variable=new ArrayList<Competencia>();
@@ -39,6 +39,8 @@ public class Difusificacion {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return varibles_difisas;
     }
     public ArrayList<Variable> evaluarX_En_Traslape(double entrada_real,double valor_X2, double valor_XX1,int num_etiqueta,ArrayList<Competencia> variable){
         double valor_XX2;
