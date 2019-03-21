@@ -2,53 +2,43 @@ package Proceso;
 
 public class Evaluar {
 
-    public void Evaluar(int entrara_real) {
-        int PC1 = 1, PC2 = 1, PC3 = 1;
-        int primera_etiqueda = 0, ultima_etiqueta = 0;
-        int entrada_real = 0;
+    public void Evaluar(int entrara_real, int[][] puntosC) {
+        int X,X2,Y, posicion;
+        String etiqueta;
 
+        int entrada_real = 0;
+        double[][] resultado = new double[100][2];
         //String[] puntoss = Consultar_archivo_PC();
 
 
-        if (entrada_real == PC1) {
-            PC1 = 1;
-            PC2 = 0;
-            PC3 = 0;
+for (int i=0;i<puntosC.length; i++)
+{
+ for (int j=0;i<2; j++)
+ {
+        if (entrada_real == puntosC[i][j]) {
+                etiqueta="";
+                X=puntosC[i][j];
+                Y=1;
+                posicion=i;
         } else {
-            if (entrada_real == PC2) {
-                PC1 = 0;
-                PC2 = 1;
-                PC3 = 0;
+            if ((entrada_real < puntosC[i][j] && puntosC[i][j-1]==0)|| (entrada_real > puntosC[i][j] && puntosC[i][j+1]==0) ) {
+                etiqueta="";
+                X=puntosC[i][j];
+                Y=1;
+                posicion=i;
             } else {
-                if (entrada_real == PC3) {
-                    PC1 = 0;
-                    PC2 = 0;
-                    PC3 = 1;
+                if (entrada_real > puntosC[i][j] && puntosC[i][j+1]!=-1 && j==0 && entrada_real < puntosC[i][j+1]) {
+                    X=puntosC[i][j];
+                    X2=puntosC[i][j+1];
+                    Y=1;
+                    posicion=i;
                 } else {
-                    if (entrada_real <= primera_etiqueda) {
-                        PC1 = 1;
-                        PC2 = 0;
-                        PC3 = 3;
-                    } else {
-                        if (entrada_real >= ultima_etiqueta) {
-                            PC1 = 0;
-                            PC2 = 0;
-                            PC3 = 1;
-                        } else {
-                            //aqui viene lo chido
-                            int pt_izquierda=0, pt_derecha=0,st_izquierda=0,st_derecha=0;
-                            ////extraer los traslapes
-                            if (entrada_real< pt_izquierda)
-                            {
-                                //llamar calcular pendiente
-                                Double pertenenciaY  = Pendiente(entrada_real,PC1,1,pt_derecha,0);
-                                System.out.println();
-                            }
-                        }
-                    }
+
                 }
             }
         }
+
+}}
     }//metodo
 
     public double Pendiente(int x,double x1,double y1,double x2,double y2){

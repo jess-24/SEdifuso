@@ -1,8 +1,11 @@
 package Proceso;
 
+import javax.lang.model.type.ArrayType;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Indice {
 
@@ -122,6 +125,36 @@ public class Indice {
         }
         else
             System.out.println("intento borrar un registro que no existe");
+    }
+
+    public ArrayList<Indice> obtenerTodasCompetencias() throws IOException {
+        ArrayList<Indice> ind = new ArrayList<Indice>();
+
+        indice = new RandomAccessFile("indice.dat","rw");
+        int llave, posicion;
+        long tamaño = indice.length();
+        String competencia = "";
+
+        if(tamaño != 0) {
+            while (indice.getFilePointer() < tamaño) {
+                llave = indice.readInt();
+                posicion = indice.readInt();
+                for (int j = 0; j < 50; j++)
+                    competencia = competencia + indice.readChar();
+
+                ind.add(new Indice(llave, posicion, competencia));
+                competencia = "";
+            }
+        }
+        indice.close();
+
+        for (int i = 0; i < ind.size(); i++) {
+            System.out.println("Llave: " + ind.get(i).getExistente());
+            System.out.println("Posicion: " + ind.get(i).getPosicion());
+            System.out.println("Competencia: " + ind.get(i).getCompetencia());
+            System.out.println("---------------");
+        }
+        return ind;
     }
 
     public long desplazamiento() throws IOException {
