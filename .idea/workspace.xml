@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b88961e9-2398-45a3-853d-86b0791172bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proceso/interfaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/interfaz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Proceso/interfaz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/interfaz.form" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
@@ -74,21 +74,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Proceso/Competencia.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Proceso/Evaluar.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1939">
               <caret line="129" column="24" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -164,7 +160,6 @@
         <option value="$PROJECT_DIR$/src/Proceso/Competencias.form" />
         <option value="$PROJECT_DIR$/src/Proceso/AddCompetencias.form" />
         <option value="$PROJECT_DIR$/src/Proceso/Maestro.java" />
-        <option value="$PROJECT_DIR$/src/Proceso/interfaz.form" />
         <option value="$PROJECT_DIR$/src/Proceso/Evaluar.java" />
         <option value="$PROJECT_DIR$/src/Proceso/Variable.java" />
         <option value="$PROJECT_DIR$/src/Proceso/Difusificacion.java" />
@@ -172,6 +167,7 @@
         <option value="$PROJECT_DIR$/src/Proceso/Competencias.java" />
         <option value="$PROJECT_DIR$/src/Proceso/Main.java" />
         <option value="$PROJECT_DIR$/src/Proceso/interfaz.java" />
+        <option value="$PROJECT_DIR$/src/Proceso/interfaz.form" />
       </list>
     </option>
   </component>
@@ -230,7 +226,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553147159609" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553147565622" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -358,11 +354,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553147094126</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Interfaz Casi terminada">
+      <created>1553147175844</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1553147175844</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68272000" />
+    <option name="totallyTimeSpent" value="68549000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -377,7 +380,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -387,7 +390,7 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4989339" visible="true" weight="0.32719395" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.4989339" visible="true" weight="0.32719395" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -504,9 +507,6 @@
     <entry file="file://$PROJECT_DIR$/src/Proceso/Competencias.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Proceso/Archivos.java" />
     <entry file="file://$PROJECT_DIR$/src/Proceso/Competencia.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -602,6 +602,9 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.form">
+      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>
   <component name="masterDetails">
