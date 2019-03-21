@@ -10,17 +10,24 @@ public class Evaluar {
     public double membrecia,y1,y2,Y;
     public String etiqueta;
     public Boolean bandera=false;
-    Difusificacion dif;
+    Difusificacion dif = new Difusificacion();
     public double entrada_real = 0;
     ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
-    //Maestro m = new Maestro();
+    Maestro mm = new Maestro();
     public Evaluar(Difusificacion dif){
         this.dif=dif;
     }
-    public ArrayList<Variable> Evaluar_M(double entrara_real, ArrayList<Competencia> puntosC) {
+    public ArrayList<Variable> Evaluar_M(int entrada_real, ArrayList<Competencia> puntosC) {
 
-for (int i=0;i<puntosC.size(); i++)
+        int Otro=0;
+        try {
+             Otro= mm.cantidad_Competencias();
+        }catch (Exception ef){};
+for (int i=0;i<Otro; i++)
 {
+if (true)
+{
+
 
         if (entrada_real <= puntosC.get(i).getP2() && puntosC.get(i).getP1()==0) {
                 etiqueta=puntosC.get(i).getEtiqueta();
@@ -28,7 +35,8 @@ for (int i=0;i<puntosC.size(); i++)
                 Y=1;
                 posicion=i;
                 bandera=true;
-                varibles_difisas.add(new Variable(etiqueta,entrara_real,Y));
+                System.out.println(i+"Entra, pero no deberia"+1+" Entrada_real "+entrada_real+" Comparado "+puntosC.get(i).getP2());
+                //varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
         } else {
             if ((entrada_real == puntosC.get(i).getP1() && puntosC.get(i).getP2()==-1)) {
                 etiqueta=puntosC.get(i).getEtiqueta();
@@ -36,19 +44,21 @@ for (int i=0;i<puntosC.size(); i++)
                 Y=1;
                 posicion=i;
                 bandera=true;
-                varibles_difisas.add(new Variable(etiqueta,entrara_real,Y));
+                System.out.println("Entra, pero no deberia"+2);
+                //varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
             } else {
                 if (entrada_real > puntosC.get(i).getP1() && puntosC.get(i).getP2()!=-1 &&  entrada_real <= puntosC.get(i).getP2()) {
                     etiqueta= puntosC.get(i).getEtiqueta();
                     bandera=true;
-
+                    Y = 1;
+                    posicion = i;
                     X=puntosC.get(i).getP1();
                     if (entrada_real==puntosC.get(i).getP2()) {
                         X = puntosC.get(i).getP2();
-                        Y = 1;
-                        posicion = i;
+                        System.out.println("Entra, pero no deberia" +3);
                     }
-                    varibles_difisas.add(new Variable(etiqueta,entrara_real,Y));
+                    System.out.println("Entra, pero no deberia"+4);
+                    //varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
                 } else {
                     if (entrada_real>=puntosC.get(i).getP1() && puntosC.get(i).getP2()==100)
                     {
@@ -57,21 +67,31 @@ for (int i=0;i<puntosC.size(); i++)
                         Y=1;
                         posicion=i;
                         bandera=true;
-                        varibles_difisas.add(new Variable(etiqueta,entrara_real,Y));
+                        System.out.println("Entra, pero no deberia"+5);
+                        //varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
                     }
 
                 }
             }
         }
+}
 
 }
 
 if (bandera==false)
 {
     ArrayList<Competencia> puntos = new ArrayList<Competencia>();
-    double[][] rangos_de_traspales = dif.calculaT(puntos);
-    for (int i = 0; i <= rangos_de_traspales.length; i++)
+    int[][] rangos_de_traspales =  dif.calculaT(puntosC);
+    /*for (int v=0;v<rangos_de_traspales.length;v++)
     {
+        System.out.println(rangos_de_traspales[v][0]+" - "+rangos_de_traspales[v][1]);
+    }*/
+    for (int i = 0; i < rangos_de_traspales.length; i++)
+    {
+        if (rangos_de_traspales[i][0]!=-1 || rangos_de_traspales[i][1]!=-1 || rangos_de_traspales[i][0]!=0 || rangos_de_traspales[i][1]!=0)
+        {
+
+
 
                 if (entrada_real<rangos_de_traspales[i][0] )
                 {
@@ -106,24 +126,26 @@ if (bandera==false)
                             y1=0;
                             x2=puntosC.get(i).getP1();
                             y2=1;
-                            etiqueta= puntosC.get(i+1).getEtiqueta();
+                            etiqueta= puntosC.get(i).getEtiqueta();
 
                     }
                 }
-
+        }
     }
-    membrecia= Pendiente(entrada_real,x1,y1,x2,y2);
-    Y=membrecia;
+    Y=calcularM(x1,y1,x2,y2,entrada_real,"Etiqueta");
+    //membrecia= Pendiente(entrada_real,x1,y1,x2,y2);
+    //Y=membrecia;
 
 
-    varibles_difisas.add(new Variable(etiqueta,entrara_real,Y));
+
 
 }
+        varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
         for (int t=0;t<puntosC.size();t++)
         {
                 if (!puntosC.get(t).getEtiqueta().equals(etiqueta))
                 {
-                    varibles_difisas.add(new Variable(puntosC.get(t).getEtiqueta(),entrara_real,0));
+                    varibles_difisas.add(new Variable(puntosC.get(t).getEtiqueta(),entrada_real,0));
                 }
 
         }
@@ -131,10 +153,12 @@ if (bandera==false)
 return varibles_difisas;
     }//metodo
 
-    public double Pendiente(double x,double x1,double y1,double x2,double y2){
-        double y = 0.0;
-        y = ((x-x1)*(y2-y1)/(x2-x1)) + y1;
-        return y;
+    double m;
+    public double calcularM(double valor_X1, double valor_Y1, double valor_X2, double valor_Y2,int entrada_real,String etiqueta) {
+        double y_grado_membresia=0;
+        m=(valor_Y2-valor_Y1)/(valor_X2-valor_X1);
+        y_grado_membresia=m*entrada_real - (m*valor_X1 +(valor_Y1));
+        return y_grado_membresia;
     }
 
 

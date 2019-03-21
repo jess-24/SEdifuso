@@ -10,7 +10,7 @@ public class Difusificacion {
     double valor_Y1;
     double valor_X2;
     double valor_Y2;
-    ArrayList<Competencia> variable;
+    ArrayList<Competencia> variable = new ArrayList<Competencia>();
     Maestro maestro = new Maestro();
     Evaluar evaluar;
     ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
@@ -25,7 +25,7 @@ public class Difusificacion {
         //num_etiqueta es el numero de traslape en el que se encuentre la entrada real
         try {
             variable = maestro.buscarCompetencia(num_variable);
-            double [][] traslapes=calculaT(variable);
+            int [][] traslapes=calculaT(variable);
             int col=0;
             for (int fila = 0; fila < 8; fila++) {
                 if(entrada_real>= traslapes[fila][col]){
@@ -86,10 +86,10 @@ public double getGradoMem_salidaDifusa(){
         return y_grado_membresia;
     }
     double y_grado_membresia;
-    public double[][] calculaT(ArrayList<Competencia> puntosCC) {
-        double[][] puntosC = new double[8][2];
-        double[][] puntosCO = new double[8][2];
-        double[][] traspales = new double[8][2];
+    public int[][] calculaT(ArrayList<Competencia> puntosCC) {
+        int[][] puntosC = new int[8][2];
+        int[][] puntosCO = new int[8][2];
+        int[][] traspales = new int[8][2];
         double puntoi, puntof;
         int F = 0, C = 0;
         //double traslape1, traslape2, traslape3, traslape4;
@@ -104,17 +104,16 @@ public double getGradoMem_salidaDifusa(){
 
         for (int i = 0; i < puntosC.length; i++) {
             for (int j = 0; j < 2; j++) {
-                if (puntosC[i][j] != 0 || puntosC[i][j] != -1) {
-                    puntosCO[F][C] = puntosC[i][j];
-                    if (C == 1) {
-                        F = F + 1;
-                        C = 0;
+                if (puntosC[i][j] != 0.0  ) {
+                    if (puntosC[i][j] != -1 || puntosC[i][j] != 100) {
+                        puntosCO[F][C] = puntosC[i][j];
+                        if (C == 1) {
+                            F = F + 1;
+                            C = 0;
+                        } else {
+                            C = C + 1;
+                        }
                     }
-                    else
-                    {
-                        C = C + 1;
-                    }
-
                 }
             }
         }
@@ -127,10 +126,14 @@ public double getGradoMem_salidaDifusa(){
          * -----------
          * */
         for (int h = 0; h < puntosCO.length; h++) {
-            double resta = puntosCO[h][1] - puntosCO[h][0];
-            double porcentaje = resta * 0.75;
-            traspales[h][0] = puntosCO[h][1] - porcentaje;
-            traspales[h][1] = puntosCO[h][0] + porcentaje;
+            if (puntosCO[h][0]!=-1 || puntosCO[h][1]!=-1)
+            {
+                int resta = puntosCO[h][1] - puntosCO[h][0];
+                int porcentaje = (int)(resta * 0.75);
+                traspales[h][0] = puntosCO[h][1] -  porcentaje;
+                traspales[h][1] = puntosCO[h][0] + porcentaje;
+            }
+
         }
 
          //Retornamos el arreglo
