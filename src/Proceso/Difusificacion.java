@@ -54,15 +54,35 @@ public class Difusificacion {
         double valor_XX2;
         ArrayList<Variable> var_difisas = new ArrayList<Variable>();
         String etiqueta=null,etiquetaAux=null;
-        if(variable.get(num_etiqueta).getP2() == -1){
-            valor_X1=variable.get(num_etiqueta).getP1();
+
+        if(variable.get(num_etiqueta).getP1() ==0){
+            valor_X1=variable.get(num_etiqueta).getP2();
         }else{
-        valor_X1=variable.get(num_etiqueta).getP2();}
+            if(variable.get(num_etiqueta).getP2()!=-1)
+            {
+                valor_X1=variable.get(num_etiqueta).getP1();
+            }else
+            {
+                valor_X1=variable.get(num_etiqueta).getP2();
+            }
+
+        }
         etiqueta=variable.get(num_etiqueta).getEtiqueta();
-        valor_XX2=variable.get((num_etiqueta+1)).getP1();
-        etiquetaAux=variable.get((num_etiqueta+1)).getEtiqueta();
+
+        valor_XX2=variable.get((num_etiqueta)).getP1();
+        etiquetaAux=variable.get((num_etiqueta)).getEtiqueta();
 
         calcularM(valor_X1, 1, valor_X2, 0,entrada_real,etiqueta);
+        System.out.println("" +valor_X1+
+                " " + valor_X2+
+                " " + entrada_real+
+                " " +
+                " ");
+        System.out.println("" +valor_XX1+
+                " " + valor_XX2+
+                " " + entrada_real+
+                " " +
+                " ");
         var_difisas.add(new Variable(etiqueta,entrada_real,getGradoMem_salidaDifusa()));
         calcularM(valor_XX1, 0, valor_XX2, 1,entrada_real,etiquetaAux);
         var_difisas.add(new Variable(etiquetaAux,entrada_real,getGradoMem_salidaDifusa()));
@@ -132,6 +152,7 @@ public double getGradoMem_salidaDifusa(){
          * -----------
          * */
         for (int h = 0; h < puntosCO.length; h++) {
+            traspales = new int[8][2];
             if (puntosCO[h][0]!=-1 || puntosCO[h][1]!=-1)
             {
                 int resta = puntosCO[h][1] - puntosCO[h][0];
@@ -141,6 +162,13 @@ public double getGradoMem_salidaDifusa(){
             }
 
         }
+            for (int i =0; i<traspales.length;i++)
+            {
+                System.out.println("traslapes:  " + traspales[i][0]+
+                        " -  " +traspales[i][1]+
+                        "");
+            }
+
 
          //Retornamos el arreglo
         return traspales;
