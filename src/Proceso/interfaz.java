@@ -14,14 +14,22 @@ public class interfaz extends JFrame{
     private JPanel panel_principal;
     private JButton evaluarButton;
     private JButton agregarNuevasVariablesButton;
+    private JPanel panel_izquierdo;
+    private JPanel panel_derecho;
+    private JPanel panel_1;
 
     private JMenuBar menuBar;
     private JMenu Archivos,maestro;
     private JMenuItem  indice, traslapes, secuencial;
+    Maestro m = new Maestro();
+    int entrada_real = 0, cantidad;
+    JLabel[] label;    //Declaración del array de etiquetas
+    JTextField[] text;   //Declaración del array de cajas de texto
 
-    int entrada_real = 0;
-
-    public interfaz() {
+    public interfaz() throws IOException {
+        cantidad= m.cantidad_Competencias();
+        label = new JLabel[cantidad];
+        text = new JTextField[cantidad];
         evaluarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -51,7 +59,7 @@ public class interfaz extends JFrame{
 
     public void interfaz()
     {
-        this.setSize(700,470);
+        this.setSize(700,700);
         this.setLayout(new GridLayout(1,2));
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -98,6 +106,39 @@ public class interfaz extends JFrame{
 
             }
         });
+        panel_izquierdo.setLayout(null);
+        panel_derecho.setLayout(null);
+
+        for(int i = 0; i < label.length; i++) {
+            label[i] = new JLabel();    //Llenamos el array de etiquetas
+            text[i] = new JTextField();    //Llemanos el array de cajas de texto
+            //(6) PROPIEDADES DE LOS CONTROLES
+            if (i==0)
+            {
+                label[i].setBounds(new Rectangle(15, 1, 500, 25));
+                label[i].setText("COMPETENCIAS");
+                panel_izquierdo.add(label[i], null);
+                label[i] = new JLabel();    //Llenamos el array de etiquetas
+                label[i].setBounds(new Rectangle(15, (i+1)*40, 500, 25));
+                label[i].setText("CALIFICACION");
+                panel_derecho.add(text[i], null);
+                label[i] = new JLabel();    //Llenamos el array de etiquetas
+                text[i] = new JTextField();
+            }
+
+            label[i].setBounds(new Rectangle(15, (i+1)*40, 500, 25));
+            label[i].setText("Capacidad de aplicar losconocimientos en lapráctica "+(i+1));
+
+            label[i].setHorizontalAlignment(SwingConstants.LEFT);
+            text[i].setBounds(new Rectangle(100, (i+1)*40, 60, 25));
+            //(7) ADICION DE LOS CONTROLES AL CONTENEDOR
+            panel_izquierdo.add(label[i], null);
+            panel_derecho.add(text[i], null);
+
+
+
+        }
+
 
 
         this.setJMenuBar(menuBar);
