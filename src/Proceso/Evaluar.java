@@ -90,8 +90,7 @@ if (bandera==false)
     }*/
     for (int i = 0; i < rangos_de_traspales.length; i++)
     {
-        if (rangos_de_traspales[i][0]!=-1 || rangos_de_traspales[i][1]!=-1 || rangos_de_traspales[i][0]!=0 || rangos_de_traspales[i][1]!=0)
-        {
+
 
 
 
@@ -134,11 +133,11 @@ if (bandera==false)
                             y1=0;
                             x2=ordenadaa[i][1];
                             y2=1;
-                            etiqueta= puntosC.get(i+1).getEtiqueta();
+                            etiqueta= puntosC.get(i).getEtiqueta();
 
                     }
                 }
-        }
+        
     }
     Y=calcularM(x1,y1,x2,y2,entrada_real,"Etiqueta");
     //membrecia= Pendiente(entrada_real,x1,y1,x2,y2);

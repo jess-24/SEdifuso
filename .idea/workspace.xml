@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b88961e9-2398-45a3-853d-86b0791172bb" name="Default Changelist" comment="Interfaz Casi terminada">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b88961e9-2398-45a3-853d-86b0791172bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Evaluar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Evaluar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proceso/Difusificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Difusificacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Proceso/Evaluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Evaluar.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -82,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Proceso/Difusificacion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="412">
+              <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#279#292#0" expanded="true" />
@@ -99,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Proceso/Evaluar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="146">
+              <caret line="139" column="8" lean-forward="true" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
               <folding>
                 <element signature="e#357#367#0" expanded="true" />
                 <element signature="e#442#443#0" expanded="true" />
@@ -416,11 +409,25 @@
       <option name="project" value="LOCAL" />
       <updated>1553155585608</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="No funciona">
+      <created>1553187913192</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1553187913192</updated>
+    </task>
+    <task id="LOCAL-00018" summary="funciona pero a veces da algo asi -1.03944">
+      <created>1553191295583</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1553191295583</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82816000" />
+    <option name="totallyTimeSpent" value="86026000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -435,7 +442,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11513859" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -445,7 +452,7 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.8459488" visible="true" weight="0.34236187" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.8459488" visible="true" weight="0.3531961" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -512,7 +519,9 @@
     <MESSAGE value="en proceso" />
     <MESSAGE value="Rangos de Traslapes terminados" />
     <MESSAGE value="Interfaz Casi terminada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interfaz Casi terminada" />
+    <MESSAGE value="No funciona" />
+    <MESSAGE value="funciona pero a veces da algo asi -1.03944" />
+    <option name="LAST_COMMIT_MESSAGE" value="funciona pero a veces da algo asi -1.03944" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SE_DIFUSO.iml">
@@ -637,21 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/Difusificacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#279#292#0" expanded="true" />
-            <element signature="e#379#389#0" expanded="true" />
-            <element signature="e#2070#2080#0" expanded="true" />
-            <element signature="e#3411#3412#0" expanded="true" />
-            <element signature="e#3451#3452#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Proceso/Competencia.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -675,10 +669,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/Difusificacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#279#292#0" expanded="true" />
+            <element signature="e#379#389#0" expanded="true" />
+            <element signature="e#2070#2080#0" expanded="true" />
+            <element signature="e#3411#3412#0" expanded="true" />
+            <element signature="e#3451#3452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Proceso/Evaluar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state relative-caret-position="146">
+          <caret line="139" column="8" lean-forward="true" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
           <folding>
             <element signature="e#357#367#0" expanded="true" />
             <element signature="e#442#443#0" expanded="true" />
