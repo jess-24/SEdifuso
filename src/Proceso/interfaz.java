@@ -53,8 +53,8 @@ public class interfaz extends JFrame{
                  for (int j=0;j<comp.size();j++)
                  {
                      JOptionPane.showMessageDialog(null,"" +
-                             ""+comp.get(j).getCompetencia()+"\n\n" +
-                             ""+variable_salida
+                             ""+comp.get(j).getCompetencia()+"\n" +
+                             "Etiqueta: "+variable_salida.get(j).getVariables().get(j).getEtiqueta()+" Entrada Real: "+variable_salida.get(j).getVariables().get(j).getX()+"  Membresia: "+variable_salida.get(j).getVariables().get(j).getY()
                      );
                  }
 

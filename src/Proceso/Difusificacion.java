@@ -11,7 +11,7 @@ public class Difusificacion {
     double valor_X2;
     double valor_Y2;
     ArrayList<Competencia> variable;
-    Maestro maestro;
+    Maestro maestro = new Maestro();
     Evaluar evaluar;
     ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
 
@@ -88,13 +88,13 @@ public double getGradoMem_salidaDifusa(){
 
         //odena los puntos para sacar traslape
 
-        for (int l = 0; l <= puntosCC.size(); l++)
+        for (int l = 0; l < puntosCC.size(); l++)
         {
                 puntosC[l][0]=puntosCC.get(l).getP1();
                 puntosC[l][1]=puntosCC.get(l).getP2();
         }
 
-        for (int i = 0; i <= puntosC.length; i++) {
+        for (int i = 0; i < puntosC.length; i++) {
             for (int j = 0; j < 2; j++) {
                 if (puntosC[i][j] != 0 || puntosC[i][j] != -1) {
                     puntosCO[F][C] = puntosC[i][j];
