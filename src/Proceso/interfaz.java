@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class interfaz extends JFrame{
     private JButton editarVariablesButton;
@@ -108,6 +109,11 @@ public class interfaz extends JFrame{
         });
         panel_izquierdo.setLayout(null);
         panel_derecho.setLayout(null);
+         Indice in = new Indice();
+        ArrayList<Indice> comp= new ArrayList<Indice>();
+        try {
+            comp=in.obtenerTodasCompetencias();
+        }catch (Exception ed){};
 
         for(int i = 0; i < label.length; i++) {
             label[i] = new JLabel();    //Llenamos el array de etiquetas
@@ -127,7 +133,8 @@ public class interfaz extends JFrame{
             }
 
             label[i].setBounds(new Rectangle(15, (i+1)*40, 500, 25));
-            label[i].setText("Capacidad de aplicar losconocimientos en lapráctica "+(i+1));
+
+            label[i].setText(comp.get(i).getExistente() + comp.get(i).getCompetencia());
 
             label[i].setHorizontalAlignment(SwingConstants.LEFT);
             text[i].setBounds(new Rectangle(100, (i+1)*40, 60, 25));
