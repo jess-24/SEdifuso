@@ -30,7 +30,8 @@ public class Difusificacion {
                     evaluarX_En_Traslape(entrada_real,traslapes[fila][col+1],traslapes[fila][col],num_etiqueta,variable);
 
                 }else {
-                        //llamar metodo de ARMANDO
+                        evaluar=new Evaluar(this);
+                        evaluar.Evaluar_M(entrada_real,variable);
                 }
             }
 

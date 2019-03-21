@@ -2,14 +2,14 @@ package Proceso;
 
 public class Variable {
     String etiqueta;
-    int x;
+    double x;
     double y;
 
     public Variable(){
 
     }
 
-    public Variable(String etiqueta, int x, double y) {
+    public Variable(String etiqueta, double x, double y) {
         this.etiqueta = etiqueta;
         this.x = x;
         this.y = y;
@@ -19,7 +19,7 @@ public class Variable {
         return etiqueta;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 

@@ -11,12 +11,12 @@ public class Evaluar {
     public String etiqueta;
     public Boolean bandera=false;
     Difusificacion dif;
-    public int entrada_real = 0;
+    public double entrada_real = 0;
     ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
     public Evaluar(Difusificacion dif){
         this.dif=dif;
     }
-    public ArrayList<Variable> Evaluar(int entrara_real, ArrayList<Competencia> puntosC) {
+    public ArrayList<Variable> Evaluar_M(double entrara_real, ArrayList<Competencia> puntosC) {
 
 for (int i=0;i<puntosC.size(); i++)
 {
