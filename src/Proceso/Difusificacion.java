@@ -14,6 +14,7 @@ public class Difusificacion {
     Maestro maestro = new Maestro();
     Evaluar evaluar;
     ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
+    public int[][] ordenada = new int[8][2];
 
     public ArrayList<Variable> setEntradaReal(int entrada_real, int num_variable) {
         this.entrada_real = entrada_real;
@@ -117,6 +118,7 @@ public double getGradoMem_salidaDifusa(){
                 }
             }
         }
+        ordenada=puntosCO;
          /* se crean los rangos de traslapes
          * Matriz de traslapes
          * ___________

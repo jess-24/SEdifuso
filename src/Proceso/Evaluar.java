@@ -25,6 +25,7 @@ public class Evaluar {
         }catch (Exception ef){};
 for (int i=0;i<Otro; i++)
 {
+    System.out.println(puntosC.get(i).getP1() +" - "+ puntosC.get(i).getP2());
 if (true)
 {
 
@@ -60,7 +61,7 @@ if (true)
                     System.out.println("Entra, pero no deberia"+4);
                     //varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
                 } else {
-                    if (entrada_real>=puntosC.get(i).getP1() && puntosC.get(i).getP2()==100)
+                    if (entrada_real>=puntosC.get(i).getP1() && (puntosC.get(i).getP2()==100 & puntosC.get(i).getP1()==-1))
                     {
                         etiqueta=puntosC.get(i).getEtiqueta();
                         X=puntosC.get(i).getP1();
@@ -82,6 +83,7 @@ if (bandera==false)
 {
     ArrayList<Competencia> puntos = new ArrayList<Competencia>();
     int[][] rangos_de_traspales =  dif.calculaT(puntosC);
+    int[][]  ordenadaa = dif.ordenada;
     /*for (int v=0;v<rangos_de_traspales.length;v++)
     {
         System.out.println(rangos_de_traspales[v][0]+" - "+rangos_de_traspales[v][1]);
@@ -93,9 +95,15 @@ if (bandera==false)
 
 
 
-                if (entrada_real<rangos_de_traspales[i][0] )
+                if (entrada_real<rangos_de_traspales[i][0] && entrada_real>ordenadaa[i][0] )
                 {
-                    if (puntosC.get(i).getP1()==0 || puntosC.get(i).getP2()!=-1)
+
+                    x1=ordenadaa[i][0];
+                    y1=1;
+                    x2=rangos_de_traspales[i][1];
+                    y2=0;
+                    etiqueta= puntosC.get(i).getEtiqueta();
+                    /*if (puntosC.get(i).getP1()==0 || puntosC.get(i).getP2()!=-1)
                     {
                         x1=puntosC.get(i).getP2();
                         y1=1;
@@ -114,19 +122,19 @@ if (bandera==false)
                         x2=rangos_de_traspales[i][1];
                         y2=0;
                         etiqueta= puntosC.get(i).getEtiqueta();
-                    }
+                    }*/
 
                 }
                 else
                 {
-                    if (entrada_real>rangos_de_traspales[i][1])
+                    if (entrada_real>rangos_de_traspales[i][1] && entrada_real<ordenadaa[i][1])
                     {
 
                             x1=rangos_de_traspales[i][0];
                             y1=0;
-                            x2=puntosC.get(i).getP1();
+                            x2=ordenadaa[i][1];
                             y2=1;
-                            etiqueta= puntosC.get(i).getEtiqueta();
+                            etiqueta= puntosC.get(i+1).getEtiqueta();
 
                     }
                 }
