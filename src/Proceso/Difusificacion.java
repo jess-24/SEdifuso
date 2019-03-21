@@ -28,14 +28,19 @@ public class Difusificacion {
             double [][] traslapes=calculaT(variable);
             int col=0;
             for (int fila = 0; fila < 8; fila++) {
-                if(entrada_real>= traslapes[fila][col] && entrada_real<=traslapes[fila][col+1]){
-                    num_etiqueta = fila + 1;
-                    varibles_difisas=evaluarX_En_Traslape(entrada_real,traslapes[fila][col+1],traslapes[fila][col],num_etiqueta,variable);
-
-                }else {
+                if(entrada_real>= traslapes[fila][col]){
+                    if (entrada_real<=traslapes[fila][col+1]) {
+                        num_etiqueta = fila + 1;
+                        varibles_difisas = evaluarX_En_Traslape(entrada_real, traslapes[fila][col + 1], traslapes[fila][col], num_etiqueta, variable);
+                    }else {
                         evaluar=new Evaluar(this);
                         varibles_difisas=evaluar.Evaluar_M(entrada_real,variable);
-                }
+                    }
+
+                }/*else {
+                        evaluar=new Evaluar(this);
+                        varibles_difisas=evaluar.Evaluar_M(entrada_real,variable);
+                }*/
             }
 
         } catch (IOException e) {
