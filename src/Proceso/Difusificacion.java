@@ -119,6 +119,10 @@ public double getGradoMem_salidaDifusa(){
             }
         }
         ordenada=puntosCO;
+        for (int v=0;v<ordenada.length;v++)
+        {
+            System.out.println("Ordenada  "+ordenada[v][0]+" - "+ordenada[v][1]);
+        }
          /* se crean los rangos de traslapes
          * Matriz de traslapes
          * ___________

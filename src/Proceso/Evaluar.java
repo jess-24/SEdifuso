@@ -48,7 +48,7 @@ if (true)
                 System.out.println("Entra, pero no deberia"+2);
                 //varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
             } else {
-                if (entrada_real > puntosC.get(i).getP1() && puntosC.get(i).getP2()!=-1 &&  entrada_real <= puntosC.get(i).getP2()) {
+                if (entrada_real >= puntosC.get(i).getP1() && puntosC.get(i).getP2()!=-1 &&  entrada_real <= puntosC.get(i).getP2()) {
                     etiqueta= puntosC.get(i).getEtiqueta();
                     bandera=true;
                     Y = 1;
@@ -84,19 +84,11 @@ if (bandera==false)
     ArrayList<Competencia> puntos = new ArrayList<Competencia>();
     int[][] rangos_de_traspales =  dif.calculaT(puntosC);
     int[][]  ordenadaa = dif.ordenada;
-    /*for (int v=0;v<rangos_de_traspales.length;v++)
-    {
-        System.out.println(rangos_de_traspales[v][0]+" - "+rangos_de_traspales[v][1]);
-    }*/
+
     for (int i = 0; i < rangos_de_traspales.length; i++)
     {
-
-
-
-
                 if (entrada_real<rangos_de_traspales[i][0] && entrada_real>ordenadaa[i][0] )
                 {
-
                     x1=ordenadaa[i][0];
                     y1=1;
                     x2=rangos_de_traspales[i][1];
