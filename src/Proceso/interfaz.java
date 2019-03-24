@@ -30,6 +30,7 @@ public class interfaz extends JFrame{
     ArrayList<variableSalida> variable_salida = new ArrayList<variableSalida>();
     JLabel[] label;    //Declaración del array de etiquetas
     JTextField[] text;   //Declaración del array de cajas de texto
+    String etiq_grad = "";
 
     public interfaz() throws IOException {
         cantidad= m.cantidad_Competencias();
@@ -52,10 +53,16 @@ public class interfaz extends JFrame{
                 }
                  for (int j=0;j<comp.size();j++)
                  {
-                     JOptionPane.showMessageDialog(null,"" +
-                             ""+comp.get(j).getCompetencia()+"\n" +
-                             "Etiqueta: "+variable_salida.get(j).getVariables().get(0).getEtiqueta()+" Entrada Real: "+variable_salida.get(j).getVariables().get(0).getX()+"  Membresia: "+variable_salida.get(j).getVariables().get(0).getY()
-                     );
+                     for (int i = 0; i < variable_salida.get(j).getVariables().size(); i++) {
+                         if(variable_salida.get(j).getVariables().get(i).getEtiqueta().charAt(0) != ' ') {
+                             etiq_grad = etiq_grad + variable_salida.get(j).getVariables().get(i).getEtiqueta() + "   ";
+                             etiq_grad = etiq_grad + "Entrada real: " + variable_salida.get(j).getVariables().get(i).getX() + "   ";
+                             etiq_grad = etiq_grad + "Membresia: " + variable_salida.get(j).getVariables().get(i).getY() + "\n";
+                         }
+                     }
+
+                     JOptionPane.showMessageDialog(null, comp.get(j).getCompetencia()+"\n" + etiq_grad);
+                     etiq_grad = "";
                  }
 
                 /*
@@ -79,6 +86,18 @@ public class interfaz extends JFrame{
             }
         });
 
+        editarVariablesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    FAM fam = new FAM();
+                    m.leerSecuencial();
+                    fam.agregarEtiquetas(2);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
 
     }
 

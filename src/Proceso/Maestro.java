@@ -175,12 +175,13 @@ public class Maestro {
                     comps.set(j + 1, temp);
                 }
 
+                /*
         for (int i = 0; i < 8; i++) {
             System.out.println("Etiqueta: " + comps.get(i).getEtiqueta());
             System.out.println("Punto 1: " + comps.get(i).getP1());
             System.out.println("Punto 2: " + comps.get(i).getP2());
         }
-
+*/
         return comps;
     }
 
