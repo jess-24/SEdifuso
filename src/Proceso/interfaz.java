@@ -24,6 +24,7 @@ public class interfaz extends JFrame{
     private JMenu Archivos,maestro;
     private JMenuItem  indice, traslapes, secuencial;
     Maestro m = new Maestro();
+    Indice ind = new Indice();
     int entrada_real = 0, cantidad;
     ArrayList<Indice> comp= new ArrayList<Indice>();
     //ArrayList<Variable> variables_salida= new ArrayList<Variable>();
@@ -55,6 +56,7 @@ public class interfaz extends JFrame{
                  {
                      for (int i = 0; i < variable_salida.get(j).getVariables().size(); i++) {
                          if(variable_salida.get(j).getVariables().get(i).getEtiqueta().charAt(0) != ' ') {
+                             //etiq_grad = etiq_grad + "Llave comp: " + comp.get(j).getExistente() + "  ";
                              etiq_grad = etiq_grad + variable_salida.get(j).getVariables().get(i).getEtiqueta() + "   ";
                              etiq_grad = etiq_grad + "Entrada real: " + variable_salida.get(j).getVariables().get(i).getX() + "   ";
                              etiq_grad = etiq_grad + "Membresia: " + variable_salida.get(j).getVariables().get(i).getY() + "\n";
@@ -91,8 +93,7 @@ public class interfaz extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 try {
                     FAM fam = new FAM();
-                    m.leerSecuencial();
-                    fam.agregarEtiquetas(2);
+                    fam.generarMatriz();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -117,44 +118,34 @@ public class interfaz extends JFrame{
 
         menuBar.add(Archivos);
 
-        Archivos.add(maestro);
-        maestro.add(new AbstractAction("Ver archivo secuencial")
+
+        Archivos.add(new AbstractAction("Archivo Maestro(puntos críticos)")
         {
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                System.out.println("action");
+                try {
+                    m.leerSecuencial();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
             }
         });
-        /*Archivos.add(new AbstractAction("Archivo Maestro(puntos críticos)")
-        {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                System.out.println("action");
-
-            }
-        });*/
         Archivos.add(new AbstractAction("Archivo Indice")
         {
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                System.out.println("action");
+                try {
+                    ind.leerSecuencial();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
             }
         });
-        Archivos.add(new AbstractAction("Archivo Traslapes")
-        {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                System.out.println("action");
 
-            }
-        });
         panel_izquierdo.setLayout(null);
         panel_derecho.setLayout(null);
-
-
-
 
         for(int i = 0; i < comp.size(); i++) {
             label[i] = new JLabel();    //Llenamos el array de etiquetas

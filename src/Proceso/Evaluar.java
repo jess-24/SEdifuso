@@ -125,7 +125,7 @@ if (bandera==false)
                             y1=0;
                             x2=ordenadaa[i][1];
                             y2=1;
-                            etiqueta= puntosC.get(i).getEtiqueta();
+                            etiqueta= puntosC.get(i+1).getEtiqueta();
 
                     }
                 }

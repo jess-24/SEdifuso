@@ -147,13 +147,14 @@ public class Indice {
             }
         }
         indice.close();
-
+/*
         for (int i = 0; i < ind.size(); i++) {
             System.out.println("Llave: " + ind.get(i).getExistente());
             System.out.println("Posicion: " + ind.get(i).getPosicion());
             System.out.println("Competencia: " + ind.get(i).getCompetencia());
             System.out.println("---------------");
         }
+*/
         return ind;
     }
 
