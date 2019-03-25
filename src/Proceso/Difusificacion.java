@@ -155,14 +155,25 @@ public double getGradoMem_salidaDifusa(){
          * | 56 | 67 |
          * -----------
          * */
+
         for (int h = 0; h < puntosCO.length; h++) {
-            traspales = new int[8][2];
-            if (puntosCO[h][0]!=-1 || puntosCO[h][1]!=-1)
+           // traspales = new int[8][2];
+            if (puntosCO[h][0]!=0 && puntosCO[h][1]!=0)
             {
                 int resta = puntosCO[h][1] - puntosCO[h][0];
                 int porcentaje = (int)(resta * 0.75);
                 traspales[h][0] = puntosCO[h][1] -  porcentaje;
                 traspales[h][1] = puntosCO[h][0] + porcentaje;
+            }
+            else
+            {
+                if (puntosCO[h][0]!=0 && puntosCO[h][1]==0)
+                {
+                    int resta = puntosCO[h][1] - puntosCO[h-1][0];
+                    int porcentaje = (int)(resta * 0.75);
+                    traspales[h][0] = puntosCO[h][1] -  porcentaje;
+                    traspales[h][1] = puntosCO[h][0] + porcentaje;
+                }
             }
 
         }
