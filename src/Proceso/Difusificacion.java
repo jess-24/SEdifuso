@@ -111,8 +111,6 @@ public class Difusificacion {
     public void calcularM(double valor_X1, int valor_Y1, double valor_X2, double valor_Y2,double entrada_real,String etiqueta) {
         m=(valor_Y2-valor_Y1)/(valor_X2-valor_X1);
         y_grado_membresia=(m*entrada_real) - (m*valor_X1) +(valor_Y1);
-        System.out.println("valor de m "+ m);
-        System.out.println("valor de y "+ y_grado_membresia);
     }
 
 
