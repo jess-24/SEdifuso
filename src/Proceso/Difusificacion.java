@@ -125,19 +125,23 @@ public double getGradoMem_salidaDifusa(){
 
         for (int i = 0; i < puntosC.length; i++) {
             for (int j = 0; j < 2; j++) {
-                if (puntosC[i][j] != 0.0  ) {
-                    if (puntosC[i][j] != -1 || puntosC[i][j] != 100) {
-                        puntosCO[F][C] = puntosC[i][j];
-                        if (C == 1) {
-                            F = F + 1;
-                            C = 0;
-                        } else {
-                            C = C + 1;
+                if (puntosC[i][j] != 0  ) {
+                    if (puntosC[i][j] != -1 ) {
+                        if  (puntosC[i][j] != 100) {
+                            puntosCO[F][C] = puntosC[i][j];
+                            if (C == 1) {
+                                F = F + 1;
+                                C = 0;
+                            } else {
+                                C = C + 1;
+                            }
                         }
                     }
                 }
             }
         }
+        C=0;
+        F=0;
         ordenada=puntosCO;
         for (int v=0;v<ordenada.length;v++)
         {
