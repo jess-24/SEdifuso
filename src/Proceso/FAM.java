@@ -145,4 +145,44 @@ public class FAM {
 
         return cant;
     }
+    public void sacar_maximos(double[][] fam) {
+        //obtener el numero de etiquetas de la competencia mas interna izquierdo y arriba
+        int num_etiquetas_izq=3,num_etiquetas_arriba=3;
+        ArrayList<Double> insuficiente=new ArrayList<Double>();
+        ArrayList<Double> suficiente=new ArrayList<Double>();
+        ArrayList<Double> bueno=new ArrayList<Double>();
+        //determina el cambio de insuficiente, suficiente y bueno
+        int cambioIzq=fam.length/num_etiquetas_izq;
+        int contadorIz=1,contadorArriba=1;
+        int cambioArriba=fam[0].length/num_etiquetas_arriba;
+
+        for (int fila = 0; fila < fam.length; fila++) { //cantidad de filas
+            //if(contadorIz<=cambioIzq)
+            for (int col=0; col < fam[fila].length; col ++){ //cant columnas
+
+                if (contadorIz<=cambioIzq){
+                    if (contadorArriba<=cambioArriba){
+                        //leera la primer regla seek(0) y traera el consecuente
+                        char consecuente='I';
+                        switch (consecuente){
+                            case 'I':
+                                break;
+                            case 'S':
+                                break;
+                            case 'B':
+                                break;
+                        }
+                    }
+                }
+                if (contadorArriba==cambioArriba){
+                    contadorArriba=0;
+                }
+                contadorArriba++;
+            }
+            if (contadorIz==cambioIzq){
+                contadorIz=0;
+            }
+            contadorIz++;
+        }
+    }
 }

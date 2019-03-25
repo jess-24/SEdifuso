@@ -30,14 +30,13 @@ if (true)
 {
 
 
+
         if (entrada_real <= puntosC.get(i).getP2() && puntosC.get(i).getP1()==0) {
                 etiqueta=puntosC.get(i).getEtiqueta();
                 X=puntosC.get(i).getP2();
                 Y=1;
                 posicion=i;
                 bandera=true;
-                System.out.println(i+"Entra, pero no deberia"+1+" Entrada_real "+entrada_real+" Comparado "+puntosC.get(i).getP2());
-                //varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
         } else {
             if ((entrada_real == puntosC.get(i).getP1() && puntosC.get(i).getP2()==-1)) {
                 etiqueta=puntosC.get(i).getEtiqueta();
@@ -82,7 +81,7 @@ if (true)
 if (bandera==false)
 {
     ArrayList<Competencia> puntos = new ArrayList<Competencia>();
-    int[][] rangos_de_traspales =  dif.calculaT(puntosC);
+    double[][] rangos_de_traspales =  dif.calculaT(puntosC);
     int[][]  ordenadaa = dif.ordenada;
 
     for (int i = 0; i < rangos_de_traspales.length; i++)
@@ -156,7 +155,7 @@ return varibles_difisas;
     public double calcularM(double valor_X1, double valor_Y1, double valor_X2, double valor_Y2,int entrada_real,String etiqueta) {
         double y_grado_membresia=0;
         m=(valor_Y2-valor_Y1)/(valor_X2-valor_X1);
-        y_grado_membresia=m*entrada_real - (m*valor_X1 +(valor_Y1));
+        y_grado_membresia=(m*entrada_real) - (m*valor_X1) +(valor_Y1);
         return y_grado_membresia;
     }
 
