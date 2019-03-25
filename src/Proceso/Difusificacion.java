@@ -68,7 +68,7 @@ public class Difusificacion {
 
         }
         etiqueta=variable.get(num_etiqueta).getEtiqueta();
-
+/*
         valor_XX2=variable.get((num_etiqueta)).getP1();
         etiquetaAux=variable.get((num_etiqueta)).getEtiqueta();
 
@@ -83,6 +83,7 @@ public class Difusificacion {
                 " " + entrada_real+
                 " " +
                 " ");
+
         var_difisas.add(new Variable(etiqueta,entrada_real,getGradoMem_salidaDifusa()));
         calcularM(valor_XX1, 0, valor_XX2, 1,entrada_real,etiquetaAux);
         var_difisas.add(new Variable(etiquetaAux,entrada_real,getGradoMem_salidaDifusa()));
@@ -93,9 +94,47 @@ public class Difusificacion {
                 var_difisas.add(new Variable(variable.get(t).getEtiqueta(),entrada_real,0));
             }
 
+        }*/
+
+        valor_XX2=variable.get((num_etiqueta+1)).getP1();
+        etiquetaAux=variable.get((num_etiqueta+1)).getEtiqueta();
+
+        calcularM(valor_X1, 1, valor_X2, 0,entrada_real,etiqueta);
+        System.out.println("" +valor_X1+
+                " " + valor_X2+
+                " " + entrada_real+
+                " " +
+                " ");
+        System.out.println("" +valor_XX1+
+                " " + valor_XX2+
+                " " + entrada_real+
+                " " +
+                " ");
+
+        Variable var1=new Variable(etiqueta,entrada_real,getGradoMem_salidaDifusa());
+        //var_difisas.add(new Variable(etiqueta,entrada_real,getGradoMem_salidaDifusa()));
+        calcularM(valor_XX1, 0, valor_XX2, 1,entrada_real,etiquetaAux);
+        Variable var2=new Variable(etiquetaAux,entrada_real,getGradoMem_salidaDifusa());
+        //var_difisas.add(new Variable(etiquetaAux,entrada_real,getGradoMem_salidaDifusa()));
+        for (int t=0;t<variable.size();t++)
+        {
+            if (variable.get(t).getEtiqueta().equals(etiqueta)) {
+                var_difisas.add(var1);
+            }
+            if (variable.get(t).getEtiqueta().equals(etiquetaAux)){
+                var_difisas.add(var2);
+            }else {
+                var_difisas.add(new Variable(variable.get(t).getEtiqueta(),entrada_real,0));
+            }
+            /*if (!variable.get(t).getEtiqueta().equals(etiqueta))
+            {
+                var_difisas.add(new Variable(variable.get(t).getEtiqueta(),entrada_real,0));
+            }*/
+
         }
         return var_difisas;
     }
+
     double m;
     public void calcularM(double valor_X1, int valor_Y1, double valor_X2, double valor_Y2,double entrada_real,String etiqueta) {
         m=(valor_Y2-valor_Y1)/(valor_X2-valor_X1);
@@ -157,7 +196,7 @@ public double getGradoMem_salidaDifusa(){
          * */
 
         for (int h = 0; h < puntosCO.length; h++) {
-           // traspales = new int[8][2];
+            traspales = new int[8][2];
             if (puntosCO[h][0]!=0 && puntosCO[h][1]!=0)
             {
                 int resta = puntosCO[h][1] - puntosCO[h][0];
