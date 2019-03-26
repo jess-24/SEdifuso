@@ -26,11 +26,6 @@ public class Evaluar {
 for (int i=0;i<Otro; i++)
 {
     System.out.println(puntosC.get(i).getP1() +" - "+ puntosC.get(i).getP2());
-if (true)
-{
-
-
-
         if (entrada_real <= puntosC.get(i).getP2() && puntosC.get(i).getP1()==0) {
                 etiqueta=puntosC.get(i).getEtiqueta();
                 X=puntosC.get(i).getP2();
@@ -76,16 +71,17 @@ if (true)
         }
 }
 
-}
+
 
 if (bandera==false)
 {
     ArrayList<Competencia> puntos = new ArrayList<Competencia>();
     double[][] rangos_de_traspales =  dif.calculaT(puntosC);
-    int[][]  ordenadaa = dif.ordenada;
+    int[][]  ordenadaa = dif.ordenada2;
 
     for (int i = 0; i < rangos_de_traspales.length; i++)
     {
+
                 if (entrada_real<rangos_de_traspales[i][0] && entrada_real>ordenadaa[i][0] )
                 {
                     x1=ordenadaa[i][0];
@@ -128,6 +124,9 @@ if (bandera==false)
                 }
 
         }
+bandera=false;
+entrada_real=0;
+etiqueta="";
 
 return varibles_difisas;
     }//metodo

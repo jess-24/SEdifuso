@@ -15,6 +15,7 @@ public class Difusificacion {
     Evaluar evaluar;
     ArrayList<Variable> varibles_difisas = new ArrayList<Variable>();
     public int[][] ordenada = new int[8][2];
+    public int[][] ordenada2 = new int[8][2];
 
     public ArrayList<Variable> setEntradaReal(int entrada_real, int num_variable) {
         this.entrada_real = entrada_real;
@@ -141,7 +142,28 @@ public double getGradoMem_salidaDifusa(){
                 puntosC[l][0]=puntosCC.get(l).getP1();
                 puntosC[l][1]=puntosCC.get(l).getP2();
         }
+
+        for (int i = 0; i < puntosC.length; i++) {
+            for (int j = 0; j < 2; j++) {
+                if (puntosC[i][j] != 0  ) {
+                    if (puntosC[i][j] != -1 ) {
+                        if  (puntosC[i][j] != 100) {
+                            puntosCO[F][C] = puntosC[i][j];
+                            if (C == 1) {
+                                F = F + 1;
+                                C = 0;
+                            } else {
+                                C = C + 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        C=0;
+        F=0;
         ordenada=puntosC;
+        ordenada2=puntosCO;
         for (int v=0;v<3;v++)
         {
             System.out.println("Ordenada  "+ordenada[v][0]+" - "+ordenada[v][1]);
