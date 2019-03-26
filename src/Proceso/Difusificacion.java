@@ -120,6 +120,8 @@ public class Difusificacion {
     public void calcularM(double valor_X1, int valor_Y1, double valor_X2, double valor_Y2,double entrada_real,String etiqueta) {
         m=(valor_Y2-valor_Y1)/(valor_X2-valor_X1);
         y_grado_membresia=(m*entrada_real) - (m*valor_X1) +(valor_Y1);
+        if (y_grado_membresia<0) { y_grado_membresia= y_grado_membresia*-1; }
+        if (y_grado_membresia>1) { y_grado_membresia= y_grado_membresia-(int)(y_grado_membresia); }
     }
 
 
