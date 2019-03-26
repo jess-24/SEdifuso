@@ -405,8 +405,8 @@ public class FAM {
 
     public ArrayList<Competencia> generarConsecuente() {
         ArrayList<Competencia> cons = new ArrayList<Competencia>();
-        cons.add(new Competencia("Insuficiente", 0, 60));
-        cons.add(new Competencia("Suficiente", 70, 80));
+        cons.add(new Competencia("Insuficiente", 0, 45));
+        cons.add(new Competencia("Suficiente", 50, 85));
         cons.add(new Competencia("Bueno", 90, 100));
         return cons;
     }
