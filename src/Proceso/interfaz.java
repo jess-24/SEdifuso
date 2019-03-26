@@ -70,7 +70,7 @@ public class interfaz extends JFrame{
                      }
 
                      JOptionPane.showMessageDialog(null, comp.get(j).getCompetencia()+"\n" + etiq_grad);
-                     System.out.println(comp.get(j).getCompetencia()+"\n" + etiq_grad);
+                     //System.out.println(comp.get(j).getCompetencia()+"\n" + etiq_grad);
                      etiq_grad = "";
                      competencias_gMem.add(new variableSalida(comp.get(j).getExistente(), vars));
                  }
@@ -78,7 +78,7 @@ public class interfaz extends JFrame{
                 try {
                     fam.sacar_maximos(fam.generarMatriz(competencias_gMem));
                     //JOptionPane.showMessageDialog(null, "Resultados:\nBueno: " + fam.getMaxBueno() + "\nSuficiente: " + fam.getMaxSuficiente() + "\nInsuficiente: " + fam.getMaxInsuficiente(), "Resultados Finales", JOptionPane.INFORMATION_MESSAGE);
-                    //JOptionPane.showMessageDialog(null, "Calificacion: " + fam.centroide(fam.getMaxInsuficiente(), fam.getMaxSuficiente(), fam.getMaxBueno(), fam.generarConsecuente()), "Calificacion final", JOptionPane.INFORMATION_MESSAGE); // calculo del centroide
+                    JOptionPane.showMessageDialog(null, "Calificacion: " + fam.centroide(fam.getMaxInsuficiente(), fam.getMaxSuficiente(), fam.getMaxBueno(), fam.generarConsecuente()), "Calificacion final", JOptionPane.INFORMATION_MESSAGE); // calculo del centroide
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -108,7 +108,12 @@ public class interfaz extends JFrame{
         editarVariablesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                UpdateCompetencias up = new UpdateCompetencias();
+                try {
+                    up.UpdateCompetencias(Integer.parseInt(JOptionPane.showInputDialog("Llave de la competencia a modificar:")));
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
 

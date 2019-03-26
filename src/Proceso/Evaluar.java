@@ -25,7 +25,7 @@ public class Evaluar {
         }catch (Exception ef){};
 for (int i=0;i<Otro; i++)
 {
-    System.out.println(puntosC.get(i).getP1() +" - "+ puntosC.get(i).getP2());
+    //System.out.println(puntosC.get(i).getP1() +" - "+ puntosC.get(i).getP2());
         if (entrada_real <= puntosC.get(i).getP2() && puntosC.get(i).getP1()==0) {
                 etiqueta=puntosC.get(i).getEtiqueta();
                 X=puntosC.get(i).getP2();
@@ -39,7 +39,7 @@ for (int i=0;i<Otro; i++)
                 Y=1;
                 posicion=i;
                 bandera=true;
-                System.out.println("Entra, pero no deberia"+2);
+                //System.out.println("Entra, pero no deberia"+2);
                 //varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
             } else {
                 if (entrada_real >= puntosC.get(i).getP1() && puntosC.get(i).getP2()!=-1 &&  entrada_real <= puntosC.get(i).getP2()) {
@@ -50,9 +50,9 @@ for (int i=0;i<Otro; i++)
                     X=puntosC.get(i).getP1();
                     if (entrada_real==puntosC.get(i).getP2()) {
                         X = puntosC.get(i).getP2();
-                        System.out.println("Entra, pero no deberia" +3);
+                        //System.out.println("Entra, pero no deberia" +3);
                     }
-                    System.out.println("Entra, pero no deberia"+4);
+                    //System.out.println("Entra, pero no deberia"+4);
                     //varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
                 } else {
                     if (entrada_real>=puntosC.get(i).getP1() && (puntosC.get(i).getP2()==100 & puntosC.get(i).getP1()==-1))
@@ -62,7 +62,7 @@ for (int i=0;i<Otro; i++)
                         Y=1;
                         posicion=i;
                         bandera=true;
-                        System.out.println("Entra, pero no deberia"+5);
+                        //System.out.println("Entra, pero no deberia"+5);
                         //varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
                     }
 

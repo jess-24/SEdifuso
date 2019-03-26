@@ -110,7 +110,7 @@ public class AddCompetencias extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 UpdateCompetencias up= new UpdateCompetencias();
                 try {
-                    up.UpdateCompetencias(Integer.parseInt(tfLlave.getText()),tfCompetencia.getText() );
+                    up.UpdateCompetencias(Integer.parseInt(tfLlave.getText()));
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }

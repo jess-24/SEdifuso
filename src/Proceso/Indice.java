@@ -109,6 +109,30 @@ public class Indice {
         return escrito;
     }
 
+    public boolean actualiazar_indice(int llave, String etiqueta)throws IOException{
+        boolean escrito;
+        Indice respuesta;
+        RandomAccessFile file;
+        respuesta = buscarIndice(llave);
+
+        if(respuesta.getExistente() == 1){
+            file = new RandomAccessFile("indice.dat","rw");
+            file.seek((respuesta.getPosicion() - 1) * desplazamiento());
+
+            file.readInt();
+            file.readInt();
+
+            for (int i = 0; i < etiqueta.length(); i++)
+                file.writeChar(etiqueta.charAt(i));
+            for (int i = 0; i < 50 - etiqueta.length(); i++)
+                file.writeChar(' ');
+
+            file.close();
+            escrito = true;
+        } else
+            escrito = false;
+        return escrito;
+    }
     public void borrarIndice(int llave) throws IOException {
         Indice posicion;
         int pos;

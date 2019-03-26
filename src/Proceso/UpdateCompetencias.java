@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
-import java.util.IdentityHashMap;
 import java.util.Scanner;
 
 public class UpdateCompetencias extends JFrame {
@@ -100,7 +99,7 @@ public class UpdateCompetencias extends JFrame {
                     e7_p2 = tfEtiqueta7_p2.getText();
                     e8_p1 = tfEtiqueta8_p1.getText();
                     e8_p2 = tfEtiqueta8_p2.getText();
-                    escribir_maestro();
+                    actualizar_Maestro();
                 } catch (Exception ee) {
                     System.out.println("Exiten datos vacios, no pasa nada");
                 }
@@ -110,57 +109,52 @@ public class UpdateCompetencias extends JFrame {
         });
     }
 
-    public void UpdateCompetencias(int llavee,String compete) throws IOException {
+    public void UpdateCompetencias(int llavee) throws IOException {
         this.setSize(600,270);
         this.setLayout(new GridLayout(1,2));
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setContentPane(panel_Update);
         Maestro ma = new Maestro();
-        int key = llavee;
         ArrayList<Indice> ind = in.obtenerTodasCompetencias();
 
         try {
             //System.out.println(comp.get(llavee).getCompetencia());
-            ArrayList<Competencia> valores = ma.buscarCompetencia(key);
-
-
+            ArrayList<Competencia> valores = ma.buscarCompetencia(llavee);
             //se obtienen los datos para poder ser usados con variables;
-           tfLlave.setText(key+"");
-
-
-
-            //---------------------------------------
-           tfEtiqueta1.setText(valores.get(0).getEtiqueta());
-            tfEtiqueta2.setText(valores.get(1).getEtiqueta());
-            tfEtiqueta3.setText(valores.get(2).getEtiqueta());
-            tfEtiqueta4.setText(valores.get(3).getEtiqueta());
-            tfEtiqueta5.setText(valores.get(4).getEtiqueta());
-            tfEtiqueta6.setText(valores.get(5).getEtiqueta());
-            tfEtiqueta7.setText(valores.get(6).getEtiqueta());
-            tfEtiqueta8.setText(valores.get(7).getEtiqueta());
-            //---------------------------------------
-
-            tfEtiqueta1_p1.setText(valores.get(0).getP1()+"");
-            tfEtiqueta1_p2.setText(valores.get(0).getP2()+"");
-            tfEtiqueta2_p1.setText(valores.get(1).getP1()+"");
-            tfEtiqueta2_p2.setText(valores.get(1).getP2()+"");
-            tfEtiqueta3_p1.setText(valores.get(2).getP1()+"");
-            tfEtiqueta3_p2.setText(valores.get(2).getP2()+"");
-            tfEtiqueta4_p1.setText(valores.get(3).getP1()+"");
-            tfEtiqueta4_p2.setText(valores.get(3).getP2()+"");
-            tfEtiqueta5_p1.setText(valores.get(4).getP1()+"");
-            tfEtiqueta5_p2.setText(valores.get(4).getP2()+"");
-            tfEtiqueta6_p1.setText(valores.get(5).getP1()+"");
-            tfEtiqueta6_p2.setText(valores.get(5).getP2()+"");
-            tfEtiqueta7_p1.setText(valores.get(6).getP1()+"");
-            tfEtiqueta7_p2.setText(valores.get(6).getP2()+"");
-            tfEtiqueta8_p1.setText(valores.get(7).getP1()+"");
-            tfEtiqueta8_p2.setText(valores.get(7).getP2()+"");
+            tfLlave.setText(llavee+"");
+            tfLlave.setEnabled(false);
             tfCompetencia.setText(ind.get(llavee-1).getCompetencia()+"");
 
+            //---------------------------------------
+            tfEtiqueta1.setText(valores.get(0).getEtiqueta().charAt(0) == ' ' ? "" : valores.get(0).getEtiqueta());
+            tfEtiqueta2.setText(valores.get(1).getEtiqueta().charAt(0) == ' ' ? "" : valores.get(1).getEtiqueta());
+            tfEtiqueta3.setText(valores.get(2).getEtiqueta().charAt(0) == ' ' ? "" : valores.get(2).getEtiqueta());
+            tfEtiqueta4.setText(valores.get(3).getEtiqueta().charAt(0) == ' ' ? "" : valores.get(3).getEtiqueta());
+            tfEtiqueta5.setText(valores.get(4).getEtiqueta().charAt(0) == ' ' ? "" : valores.get(4).getEtiqueta());
+            tfEtiqueta6.setText(valores.get(5).getEtiqueta().charAt(0) == ' ' ? "" : valores.get(5).getEtiqueta());
+            tfEtiqueta7.setText(valores.get(6).getEtiqueta().charAt(0) == ' ' ? "" : valores.get(6).getEtiqueta());
+            tfEtiqueta8.setText(valores.get(7).getEtiqueta().charAt(0) == ' ' ? "" : valores.get(7).getEtiqueta());
+            //---------------------------------------
+            tfEtiqueta1_p1.setText(valores.get(0).getP1() == -1 ? "" : valores.get(0).getP1() + "");
+            tfEtiqueta1_p2.setText(valores.get(0).getP2() == -1 ? "" : valores.get(0).getP2() + "");
+            tfEtiqueta2_p1.setText(valores.get(1).getP1() == -1 ? "" : valores.get(1).getP1() + "");
+            tfEtiqueta2_p2.setText(valores.get(1).getP2() == -1 ? "" : valores.get(1).getP2() + "");
+            tfEtiqueta3_p1.setText(valores.get(2).getP1() == -1 ? "" : valores.get(2).getP1() + "");
+            tfEtiqueta3_p2.setText(valores.get(2).getP2() == -1 ? "" : valores.get(2).getP2() + "");
+            tfEtiqueta4_p1.setText(valores.get(3).getP1() == -1 ? "" : valores.get(3).getP1() + "");
+            tfEtiqueta4_p2.setText(valores.get(3).getP2() == -1 ? "" : valores.get(3).getP2() + "");
+            tfEtiqueta5_p1.setText(valores.get(4).getP1() == -1 ? "" : valores.get(4).getP1() + "");
+            tfEtiqueta5_p2.setText(valores.get(4).getP2() == -1 ? "" : valores.get(4).getP2() + "");
+            tfEtiqueta6_p1.setText(valores.get(5).getP1() == -1 ? "" : valores.get(5).getP1() + "");
+            tfEtiqueta6_p2.setText(valores.get(5).getP2() == -1 ? "" : valores.get(5).getP2() + "");
+            tfEtiqueta7_p1.setText(valores.get(6).getP1() == -1 ? "" : valores.get(6).getP1() + "");
+            tfEtiqueta7_p2.setText(valores.get(6).getP2() == -1 ? "" : valores.get(6).getP2() + "");
+            tfEtiqueta8_p1.setText(valores.get(7).getP1() == -1 ? "" : valores.get(7).getP1() + "");
+            tfEtiqueta8_p2.setText(valores.get(7).getP2() == -1 ? "" : valores.get(7).getP2() + "");
+
         } catch (Exception ee) {
-            System.out.println("Exiten datos vacios, no pasa nada");
+            //System.out.println("Exiten datos vacios, no pasa nada");
         }
 
 
@@ -168,19 +162,23 @@ public class UpdateCompetencias extends JFrame {
         this.setVisible(true);
     }
 
-    private void escribir_maestro() throws IOException {
+    private void actualizar_Maestro() throws IOException {
         maestro = new RandomAccessFile("maestro.dat", "rw");
         tamaño = maestro.length();
-        maestro.seek(tamaño);//nos vamos hasta el final del archivo
+        Maestro mae = new Maestro();
+
         res = indice.buscarIndice(llave);
+
+        maestro.seek((res.getPosicion() - 1) * mae.desplazamiento());//nos vamos hasta la posicion del registro
         competencia = "";
 
-        if (res.getExistente() == 1) {
-            System.out.println("Regla ya existente.");
+        if (res.getExistente() == -1) {
+            System.out.println("Regla no existente.");
         } else {
             competencia = tfCompetencia.getText();
-            indice.escribir_indice(llave, competencia);//escribimos la entrada en el indice
-            maestro.writeInt(llave);//escribimos la regla en el maestro
+
+            indice.actualiazar_indice(llave, competencia);//escribimos la entrada en el indice
+            System.out.println("Llave: " + maestro.readInt());//escribimos la regla en el maestro
 
             escribir_etiqueta(etiqueta1);
             if(e1_p1.length() > 0 && e1_p2.length() > 0) {

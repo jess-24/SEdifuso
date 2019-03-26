@@ -37,10 +37,10 @@ public class FAM {
         */
         for (int i = 0; i < ordenada.size(); i++) { // Separa las competencias
             if(i % 2 == 0) {
-                System.out.println("↑\t" + ordenada.get(i).getExistente() + " " + ordenada.get(i).getCompetencia());
+                //System.out.println("↑\t" + ordenada.get(i).getExistente() + " " + ordenada.get(i).getCompetencia());
                 columna.add(ordenada.get(i));
             }else{
-                System.out.println("←\t" + ordenada.get(i).getExistente() + " " + ordenada.get(i).getCompetencia());
+                //System.out.println("←\t" + ordenada.get(i).getExistente() + " " + ordenada.get(i).getCompetencia());
                 fila.add(ordenada.get(i));
             }
         }
@@ -48,7 +48,7 @@ public class FAM {
         dim_row = calcularDimension(fila); // Cantidad de filas
         dim_col = calcularDimension(columna); // Cantidad de columnas
         double matrizFam[][] = new double[dim_row][dim_col]; // Matriz FAM
-        System.out.println(calcularDimension(fila) + " x " + calcularDimension(columna));
+        //System.out.println(calcularDimension(fila) + " x " + calcularDimension(columna));
         int etiqueta_indice = 0, competencia_indice = 0;
 
         int tam_comp_a[][] = etiquetasPorCompetencia(columna);
@@ -126,7 +126,7 @@ public class FAM {
             ind_i[3]++;
 
         }
-
+/*
         for (int i = 0; i < dim_row; i++) {
             for (int j = 0; j < dim_col; j++) {
                 System.out.print("[" + matrizFam[i][j] + "]");
@@ -141,7 +141,7 @@ public class FAM {
                 System.out.println();
             }
         }
-
+*/
         //System.out.println("FiN FAM");
         return matrizFam;
     }
@@ -303,7 +303,7 @@ public class FAM {
             for (int col=0; col < fam[fila].length; col ++){ //cant columnas
                 if (contadorIz<=cambioIzq){
                     if (contadorArriba<=cambioArriba){
-                        System.out.println("que tiene iiiiiiiiiiii"+i);
+                        //System.out.println("que tiene iiiiiiiiiiii"+i);
                         if (contadorArriba==cambioArriba){
                             consecuente=con[i];
                             if (i!=8)
@@ -334,9 +334,9 @@ public class FAM {
                 i-=2;
         }
 
-        System.out.println("maximooo insuf: "+getMaxInsuficiente());
-        System.out.println("max suf: "+getMaxSuficiente());
-        System.out.println("max bueno: "+getMaxBueno());
+        //System.out.println("maximooo insuf: "+getMaxInsuficiente());
+        //System.out.println("max suf: "+getMaxSuficiente());
+        //System.out.println("max bueno: "+getMaxBueno());
     }
     public double getMaxInsuficiente(){
         Comparator<Double> comparador = Collections.reverseOrder();

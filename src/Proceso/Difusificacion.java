@@ -20,8 +20,8 @@ public class Difusificacion {
     public ArrayList<Variable> setEntradaReal(int entrada_real, int num_variable) {
         this.entrada_real = entrada_real;
         this.num_variable = num_variable;
-        System.out.println(num_variable);
-        System.out.println(entrada_real);
+        //System.out.println(num_variable);
+        //System.out.println(entrada_real);
         variable=new ArrayList<Competencia>();
         int num_etiqueta=0;
         //num_etiqueta es el numero de traslape en el que se encuentre la entrada real
@@ -81,6 +81,7 @@ public class Difusificacion {
         etiquetaAux=variable.get((num_etiqueta+1)).getEtiqueta();
 
         calcularM(valor_X1, 1, valor_X2, 0,entrada_real,etiqueta);
+        /*
         System.out.println("" +valor_X1+
                 " " + valor_X2+
                 " " + entrada_real+
@@ -91,7 +92,7 @@ public class Difusificacion {
                 " " + entrada_real+
                 " " +
                 " ");
-
+        */
         Variable var1=new Variable(etiqueta,entrada_real,getGradoMem_salidaDifusa());
         //var_difisas.add(new Variable(etiqueta,entrada_real,getGradoMem_salidaDifusa()));
         calcularM(valor_XX1, 0, valor_XX2, 1,entrada_real,etiquetaAux);
@@ -164,10 +165,10 @@ public double getGradoMem_salidaDifusa(){
         F=0;
         ordenada=puntosC;
         ordenada2=puntosCO;
-        for (int v=0;v<3;v++)
+        /*for (int v=0;v<3;v++)
         {
             System.out.println("Ordenada  "+ordenada2[v][0]+" - "+ordenada2[v][1]);
-        }
+        }*/
          /* se crean los rangos de traslapes
          * Matriz de traslapes
          * ___________
@@ -193,13 +194,14 @@ public double getGradoMem_salidaDifusa(){
             }
             t++;
         }
+        /*
             for (int i =0; i<traspales.length;i++)
             {
                 System.out.println("traslapes:  " + traspales[i][0]+
                         " -  " +traspales[i][1]+
                         "");
             }
-
+*/
 
          //Retornamos el arreglo
         return traspales;
