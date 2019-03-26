@@ -1,7 +1,7 @@
 package Proceso;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 
 public class FAM {
     Maestro maestro = new Maestro();
@@ -145,12 +145,15 @@ public class FAM {
 
         return cant;
     }
+    ArrayList<Double> insuficiente;
+    ArrayList<Double> suficiente;
+    ArrayList<Double> bueno;
     public void sacar_maximos(double[][] fam) {
         //obtener el numero de etiquetas de la competencia mas interna izquierdo y arriba
         int num_etiquetas_izq=3,num_etiquetas_arriba=3;
-        ArrayList<Double> insuficiente=new ArrayList<Double>();
-        ArrayList<Double> suficiente=new ArrayList<Double>();
-        ArrayList<Double> bueno=new ArrayList<Double>();
+        insuficiente=new ArrayList<Double>();
+        suficiente=new ArrayList<Double>();
+        bueno=new ArrayList<Double>();
         //determina el cambio de insuficiente, suficiente y bueno
         int cambioIzq=fam.length/num_etiquetas_izq;
         int contadorIz=1,contadorArriba=1;
@@ -165,11 +168,11 @@ public class FAM {
                         //leera la primer regla seek(0) y traera el consecuente
                         char consecuente='I';
                         switch (consecuente){
-                            case 'I':
+                            case 'I': insuficiente.add(fam[fila][col]);
                                 break;
-                            case 'S':
+                            case 'S': suficiente.add(fam[fila][col]);
                                 break;
-                            case 'B':
+                            case 'B': bueno.add(fam[fila][col]);
                                 break;
                         }
                     }
@@ -184,5 +187,20 @@ public class FAM {
             }
             contadorIz++;
         }
+    }
+    public double getMaxInsuficiente(){
+        Comparator<Double> comparador = Collections.reverseOrder();
+        Collections.sort(insuficiente, comparador);
+        return insuficiente.get(0);
+    }
+    public double getMaxSuficiente(){
+        Comparator<Double> comparador = Collections.reverseOrder();
+        Collections.sort(suficiente, comparador);
+        return suficiente.get(0);
+    }
+    public double getMaxBueno(){
+        Comparator<Double> comparador = Collections.reverseOrder();
+        Collections.sort(bueno, comparador);
+        return bueno.get(0);
     }
 }
