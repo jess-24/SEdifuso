@@ -25,6 +25,7 @@ public class interfaz extends JFrame{
     private JMenuItem  indice, traslapes, secuencial;
     Maestro m = new Maestro();
     Indice ind = new Indice();
+    FAM fam = new FAM();
     int entrada_real = 0, cantidad;
     ArrayList<Indice> comp= new ArrayList<Indice>();
     //ArrayList<Variable> variables_salida= new ArrayList<Variable>();
@@ -32,6 +33,9 @@ public class interfaz extends JFrame{
     JLabel[] label;    //Declaración del array de etiquetas
     JTextField[] text;   //Declaración del array de cajas de texto
     String etiq_grad = "";
+
+
+    ArrayList<variableSalida> competencias_gMem = new ArrayList<variableSalida>();
 
     public interfaz() throws IOException {
         cantidad= m.cantidad_Competencias();
@@ -45,6 +49,7 @@ public class interfaz extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 int[][] entradas = new int[comp.size()][2];
+
                 for (int i=0;i<comp.size();i++)
                 {
                     Difusificacion difu= new Difusificacion();
@@ -54,20 +59,31 @@ public class interfaz extends JFrame{
                 }
                  for (int j=0;j<comp.size();j++)
                  {
+                     ArrayList<Variable> vars = new ArrayList<Variable>();
                      for (int i = 0; i < variable_salida.get(j).getVariables().size(); i++) {
                          if(variable_salida.get(j).getVariables().get(i).getEtiqueta().charAt(0) != ' ') {
                              //etiq_grad = etiq_grad + "Llave comp: " + comp.get(j).getExistente() + "  ";
                              etiq_grad = etiq_grad + variable_salida.get(j).getVariables().get(i).getEtiqueta() + "   ";
                              etiq_grad = etiq_grad + "Entrada real: " + variable_salida.get(j).getVariables().get(i).getX() + "   ";
                              etiq_grad = etiq_grad + "Membresia: " + variable_salida.get(j).getVariables().get(i).getY() + "\n";
+                             vars.add(new Variable(variable_salida.get(j).getVariables().get(i).getEtiqueta(), variable_salida.get(j).getVariables().get(i).getX(), variable_salida.get(j).getVariables().get(i).getY()));
                          }
+
                      }
 
                      JOptionPane.showMessageDialog(null, comp.get(j).getCompetencia()+"\n" + etiq_grad);
                      System.out.println(comp.get(j).getCompetencia()+"\n" + etiq_grad);
                      etiq_grad = "";
-
+                     competencias_gMem.add(new variableSalida(comp.get(j).getExistente(), vars));
                  }
+
+                try {
+                    fam.sacar_maximos(fam.generarMatriz(competencias_gMem));
+                    //JOptionPane.showMessageDialog(null, "Resultados:\nBueno: " + fam.getMaxBueno() + "\nSuficiente: " + fam.getMaxSuficiente() + "\nInsuficiente: " + fam.getMaxInsuficiente(), "Resultados Finales", JOptionPane.INFORMATION_MESSAGE);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+
 
                 /*
                 Evaluar evaluar = new Evaluar();
@@ -93,12 +109,7 @@ public class interfaz extends JFrame{
         editarVariablesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    FAM fam = new FAM();
-                    fam.generarMatriz();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+
             }
         });
 

@@ -8,11 +8,33 @@ public class FAM {
     Indice indice = new Indice();
     int dim_row = 0, dim_col = 0;
 
-    public void generarMatriz() throws IOException {
+    public double[][] generarMatriz(ArrayList<variableSalida> grados_membresia) throws IOException {
         ArrayList<Indice> columna = new ArrayList<Indice>(); // Arreglo que almacenara los datos que van del lado de arriba
         ArrayList<Indice> fila = new ArrayList<Indice>(); // arreglo que almacenará los datos que van del lado izquierdo
         ArrayList<Indice> ordenada = ordenarMatriz(); // Ordena la matriz por jerarquia de competencias
 
+
+        /*
+        System.out.println("Grados de membresia");
+        for (int k = 0; k < grados_membresia.size(); k++) {
+            System.out.println("Tam ext: " + grados_membresia.size() + ", Tam int: " + grados_membresia.get(k).getVariables().size());
+            for (int i = 0; i < grados_membresia.get(k).getVariables().size(); i++) {
+                System.out.println("k = " + k + ": " + grados_membresia.get(k).getNumCompetencias() + ", " + grados_membresia.get(k).getVariables().get(i).getEtiqueta() + " " + grados_membresia.get(k).getVariables().get(i).getY());
+            }
+        }
+        //System.out.println("------");
+        //System.out.println("Grados de membresia ordenados");
+
+        */
+        ArrayList<variableSalida> gm_ordenados = ordenarMatriz(grados_membresia);
+        /*
+        for (int k = 0; k < gm_ordenados.size(); k++) {
+            System.out.println("Tam ext: " + gm_ordenados.size() + ", Tam int: " + gm_ordenados.get(k).getVariables().size());
+            for (int i = 0; i < gm_ordenados.get(k).getVariables().size(); i++) {
+                System.out.println("k = " + k + ": " + gm_ordenados.get(k).getNumCompetencias() + ", " + gm_ordenados.get(k).getVariables().get(i).getEtiqueta() + " " + gm_ordenados.get(k).getVariables().get(i).getX() + " " + gm_ordenados.get(k).getVariables().get(i).getY());
+            }
+        }
+        */
         for (int i = 0; i < ordenada.size(); i++) { // Separa las competencias
             if(i % 2 == 0) {
                 System.out.println("↑\t" + ordenada.get(i).getExistente() + " " + ordenada.get(i).getCompetencia());
@@ -40,42 +62,116 @@ public class FAM {
             ind_i[i] = 0;
 
         for (int i = 0; i < dim_row; i++) { // Recorre filas
+            //System.out.println(i); // Numero Iteracion / Renglon
+
+            if(i > 0 && i % 27 == 0){
+                ind_i[0]++;
+                ind_i[1] = 0;
+                ind_i[2] = 0;
+                ind_i[3] = 0;
+            }
+            if(i > 0 && i % 9 == 0 && i % 27 != 0){
+                ind_i[1]++;
+                ind_i[2] = 0;
+                ind_i[3] = 0;
+            }
+            if(i > 0 && i % 3 == 0 && i % 9 != 0){
+                ind_i[2]++;
+                ind_i[3] = 0;
+            }
+
             for (int j = 0; j < dim_col; j++) {  // Recorre columnas
-                if(j % 27 == 0){
+                if(j > 0 && j % 27 == 0){
                     ind_a[0]++;
                     ind_a[1] = 0;
+                    ind_a[2] = 0;
+                    ind_a[3] = 0;
                 }
-                if(j % 9 == 0){
+                if(j > 0 && j % 9 == 0 && j % 27 != 0){
                     ind_a[1]++;
                     ind_a[2] = 0;
+                    ind_a[3] = 0;
                 }
-                if(j % 3 == 0){
+                if(j > 0 && j % 3 == 0 && j % 9 != 0){
                     ind_a[2]++;
                     ind_a[3] = 0;
                 }
-                if(i % 27 == 0){
-                    ind_i[0]++;
-                    ind_i[1] = 0;
+
+                /*
+                for (int k = 0; k < 4; k++) {
+                    System.out.println("ind_a[" + k + "] = " + ind_a[k]);
                 }
-                if(i % 9 == 0){
-                    ind_i[1]++;
-                    ind_i[2] = 0;
+                System.out.println("--");
+                for (int k = 0; k < 4; k++) {
+                    System.out.println("ind_i[" + k + "] = " + ind_i[k]);
                 }
-                if(i % 3 == 0){
-                    ind_i[2]++;
-                    ind_i[3] = 0;
-                }
-                matrizFam[i][j] = 0;// aqui se deberia agregar el minimo, pero ya no se como hacerlo, estoy muerto
+                System.out.println("----- Fin de iteracion " + j);
+                */
+
+                matrizFam[i][j] = minimo(gm_ordenados.get(0).getVariables().get(ind_a[0]).getY(),
+                                        gm_ordenados.get(2).getVariables().get(ind_a[1]).getY(),
+                                        gm_ordenados.get(4).getVariables().get(ind_a[2]).getY(),
+                                        gm_ordenados.get(6).getVariables().get(ind_a[3]).getY(),
+                                        gm_ordenados.get(1).getVariables().get(ind_i[0]).getY(),
+                                        gm_ordenados.get(3).getVariables().get(ind_i[1]).getY(),
+                                        gm_ordenados.get(5).getVariables().get(ind_i[2]).getY(),
+                                        gm_ordenados.get(7).getVariables().get(ind_i[3]).getY());
+                ind_a[3]++;
             }
-            System.out.println(i); // Numero Iteracion / Renglon
+            ind_a[0] = 0;
+            ind_a[1] = 0;
+            ind_a[2] = 0;
+            ind_a[3] = 0;
+
+            ind_i[3]++;
+
         }
 
+        for (int i = 0; i < dim_row; i++) {
+            for (int j = 0; j < dim_col; j++) {
+                System.out.print("[" + matrizFam[i][j] + "]");
+                if(j % 27 == 0 && j > 0)
+                    System.out.print(" | ");
+            }
+            System.out.println();
+            if(i % 27 == 0 && i > 0){
+                for (int j = 0; j < (5 * dim_col) + 6; j++) {
+                    System.out.print("-");
+                }
+                System.out.println();
+            }
+        }
 
-        System.out.println("FiN FAM");
+        //System.out.println("FiN FAM");
+        //sacar_maximos(matrizFam);
+        return matrizFam;
     }
 
-    public int minimo(int a, int b, int c, int d, int e, int f, int g, int h){
-        return 0;
+    public double minimo(double a, double b, double c, double d, double e, double f, double g, double h){
+        double min;
+
+        min = (a < b) ? a : b;
+        min = (min < c) ? min : c;
+        min = (min < d) ? min : d;
+        min = (min < e) ? min : e;
+        min = (min < f) ? min : f;
+        min = (min < g) ? min : g;
+        min = (min < h) ? min : h;
+
+        if(min != 0){
+            System.out.println("A: " + a);
+            System.out.println("B: " + b);
+            System.out.println("C: " + c);
+            System.out.println("D: " + d);
+            System.out.println("E: " + e);
+            System.out.println("F: " + f);
+            System.out.println("G: " + g);
+            System.out.println("H: " + h);
+            System.out.println("Min: " + min);
+            System.out.println("----------------");
+        }
+
+        return min;
     }
 
     public int[][] etiquetasPorCompetencia(ArrayList<Indice> aux) throws IOException {
@@ -122,6 +218,45 @@ public class FAM {
         return ordenada;
     }
 
+    public ArrayList<variableSalida> ordenarMatriz(ArrayList<variableSalida> arr){
+        ArrayList<variableSalida> aux = arr;
+        ArrayList<variableSalida> temp = new ArrayList<variableSalida>();
+
+        for (int i = 0; i < aux.size(); i++) {
+            temp.add(aux.get(i));
+        }
+
+        for (int i = 0; i < aux.size(); i++) {
+            switch (aux.get(i).getNumCompetencias()){
+                case 1:
+                    temp.set(2, aux.get(i));
+                    break;
+                case 2:
+                    temp.set(0, aux.get(i));
+                    break;
+                case 3:
+                    temp.set(1, aux.get(i));
+                    break;
+                case 4:
+                    temp.set(5, aux.get(i));
+                    break;
+                case 5:
+                    temp.set(3, aux.get(i));
+                    break;
+                case 6:
+                    temp.set(4, aux.get(i));
+                    break;
+                case 7:
+                    temp.set(6, aux.get(i));
+                    break;
+                case 8:
+                    temp.set(7, aux.get(i));
+                    break;
+            }
+        }
+        return temp;
+    }
+
     public int calcularDimension(ArrayList<Indice> arr) throws IOException {
         int cant = 0, dim = 1;
         ArrayList<Competencia> aux;
@@ -148,6 +283,7 @@ public class FAM {
     ArrayList<Double> insuficiente;
     ArrayList<Double> suficiente;
     ArrayList<Double> bueno;
+
     public void sacar_maximos(double[][] fam) {
         //obtener el numero de etiquetas de la competencia mas interna izquierdo y arriba
         int num_etiquetas_izq=3,num_etiquetas_arriba=3;

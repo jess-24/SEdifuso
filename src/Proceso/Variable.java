@@ -9,7 +9,7 @@ public class Variable {
 
     }
 
-    public Variable(String etiqueta, double x, double ye) {
+    public Variable(String etiqueta, double x, double y) {
         this.etiqueta = etiqueta;
         this.x = x;
         this.y = y;
