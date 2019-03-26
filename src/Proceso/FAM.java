@@ -143,7 +143,6 @@ public class FAM {
         }
 
         //System.out.println("FiN FAM");
-        //sacar_maximos(matrizFam);
         return matrizFam;
     }
 
@@ -158,6 +157,7 @@ public class FAM {
         min = (min < g) ? min : g;
         min = (min < h) ? min : h;
 
+        /*
         if(min != 0){
             System.out.println("A: " + a);
             System.out.println("B: " + b);
@@ -170,7 +170,7 @@ public class FAM {
             System.out.println("Min: " + min);
             System.out.println("----------------");
         }
-
+        */
         return min;
     }
 
@@ -338,5 +338,71 @@ public class FAM {
         Comparator<Double> comparador = Collections.reverseOrder();
         Collections.sort(bueno, comparador);
         return bueno.get(0);
+    }
+
+
+    private double membresia(double calificacion, int[] rango, double maximo) {
+        double gMembresia = 0;
+        int rangoM, rangoMax, puntoCritico1, puntoCritico2;
+        if (maximo > 0) {
+            rangoM = rango[0];
+            rangoMax = rango[1];
+            if (rango[0] >= 0) {
+                if (rango[1] == -1) {
+                    puntoCritico1 = (rango[0] == 0) ? rango[0] : rango[0] - 10;
+                    puntoCritico2 = (rango[0] == 100) ? rango[0] : rango[0] + 10;
+                    if (calificacion >= puntoCritico1 && calificacion <= puntoCritico2) {
+                        if (calificacion == rangoM)
+                            return maximo;
+                        if (calificacion < rangoM)
+                            gMembresia = (double) (calificacion - puntoCritico1) / (rangoM - puntoCritico1);
+                        if (calificacion > rangoM)
+                            gMembresia = (double) (puntoCritico2 - calificacion) / (puntoCritico2 - rangoM);
+                    } else
+                        return 0;
+                } else {
+                    puntoCritico1 = (rango[0] == 0) ? rango[0] : rango[0] + 10;
+                    puntoCritico2 = (rango[1] == 100) ? rango[1] : rango[1] - 10;
+                    if (calificacion >= rangoM && calificacion <= rangoMax) {
+                        if (puntoCritico1 <= calificacion && calificacion <= puntoCritico2)
+                            return maximo;
+                        if (calificacion < puntoCritico1)
+                            gMembresia = (double) (calificacion - rangoM) / (puntoCritico1 - rangoM);
+                        if (calificacion > puntoCritico2)
+                            gMembresia = (double) (rangoMax - calificacion) / (rangoMax - puntoCritico2);
+                    } else
+                        return 0;
+                }
+            } else
+                return 0;
+            return gMembresia > maximo ? maximo : gMembresia;
+        } else
+            return 0;
+    }
+
+    public ArrayList<Competencia> generarConsecuente() {
+        ArrayList<Competencia> cons = new ArrayList<Competencia>();
+        cons.add(new Competencia("Insuficiente", 0, 60));
+        cons.add(new Competencia("Suficiente", 70, 80));
+        cons.add(new Competencia("Bueno", 90, 100));
+        return cons;
+    }
+
+    public double centroide(double gmInsuficiente, double gmSuficiente, double gmBueno, ArrayList<Competencia> cons) {
+        double sum = 0;
+        double prod = 0;
+        int punto1[] = {cons.get(0).getP1(), cons.get(0).getP2()};
+        int punto2[] = {cons.get(1).getP1(), cons.get(1).getP2()};
+        int punto3[] = {cons.get(2).getP1(), cons.get(2).getP2()};
+
+        for (double i = 0.0; i < 100.0; i += 1) {
+            prod += i * membresia(i, punto1, gmInsuficiente);
+            prod += i * membresia(i, punto2, gmSuficiente);
+            prod += i * membresia(i, punto3, gmBueno);
+            sum += membresia(i, punto1, gmInsuficiente);
+            sum += membresia(i, punto2, gmSuficiente);
+            sum += membresia(i, punto3, gmBueno);
+        }
+        return prod / sum;
     }
 }

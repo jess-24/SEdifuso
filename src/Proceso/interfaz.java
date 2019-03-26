@@ -54,8 +54,6 @@ public class interfaz extends JFrame{
                 {
                     Difusificacion difu= new Difusificacion();
                     variable_salida.add(new variableSalida(comp.get(i).getExistente() , difu.setEntradaReal(Integer.parseInt(text[i].getText()),comp.get(i).getExistente())) );
-
-
                 }
                  for (int j=0;j<comp.size();j++)
                  {
@@ -80,6 +78,7 @@ public class interfaz extends JFrame{
                 try {
                     fam.sacar_maximos(fam.generarMatriz(competencias_gMem));
                     //JOptionPane.showMessageDialog(null, "Resultados:\nBueno: " + fam.getMaxBueno() + "\nSuficiente: " + fam.getMaxSuficiente() + "\nInsuficiente: " + fam.getMaxInsuficiente(), "Resultados Finales", JOptionPane.INFORMATION_MESSAGE);
+                    //JOptionPane.showMessageDialog(null, "Calificacion: " + fam.centroide(fam.getMaxInsuficiente(), fam.getMaxSuficiente(), fam.getMaxBueno(), fam.generarConsecuente()), "Calificacion final", JOptionPane.INFORMATION_MESSAGE); // calculo del centroide
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
