@@ -290,19 +290,26 @@ public class FAM {
         insuficiente=new ArrayList<Double>();
         suficiente=new ArrayList<Double>();
         bueno=new ArrayList<Double>();
+        char[] con={'I','I','S','I','S','B','S','B','B'};
+        char consecuente=con[0];
         //determina el cambio de insuficiente, suficiente y bueno
         int cambioIzq=fam.length/num_etiquetas_izq;
         int contadorIz=1,contadorArriba=1;
-        int cambioArriba=fam[0].length/num_etiquetas_arriba;
-
+        int i=0;
+        int cambioArriba=fam[i].length/num_etiquetas_arriba;
+        boolean cambio=false;
         for (int fila = 0; fila < fam.length; fila++) { //cantidad de filas
             //if(contadorIz<=cambioIzq)
             for (int col=0; col < fam[fila].length; col ++){ //cant columnas
-
                 if (contadorIz<=cambioIzq){
                     if (contadorArriba<=cambioArriba){
+                        System.out.println("que tiene iiiiiiiiiiii"+i);
+                        if (contadorArriba==cambioArriba){
+                            consecuente=con[i];
+                            if (i!=8)
+                                i++;
+                        }
                         //leera la primer regla seek(0) y traera el consecuente
-                        char consecuente='I';
                         switch (consecuente){
                             case 'I': insuficiente.add(fam[fila][col]);
                                 break;
@@ -319,23 +326,39 @@ public class FAM {
                 contadorArriba++;
             }
             if (contadorIz==cambioIzq){
+
                 contadorIz=0;
             }
             contadorIz++;
+            if (contadorIz!=cambioIzq)
+                i-=2;
         }
+
+        System.out.println("maximooo insuf: "+getMaxInsuficiente());
+        System.out.println("max suf: "+getMaxSuficiente());
+        System.out.println("max bueno: "+getMaxBueno());
     }
     public double getMaxInsuficiente(){
         Comparator<Double> comparador = Collections.reverseOrder();
+        if (insuficiente.isEmpty()){
+            insuficiente.add(0.0);
+        }
         Collections.sort(insuficiente, comparador);
         return insuficiente.get(0);
     }
     public double getMaxSuficiente(){
         Comparator<Double> comparador = Collections.reverseOrder();
+        if (suficiente.isEmpty()){
+            suficiente.add(0.0);
+        }
         Collections.sort(suficiente, comparador);
         return suficiente.get(0);
     }
     public double getMaxBueno(){
         Comparator<Double> comparador = Collections.reverseOrder();
+        if (bueno.isEmpty()){
+            bueno.add(0.0);
+        }
         Collections.sort(bueno, comparador);
         return bueno.get(0);
     }

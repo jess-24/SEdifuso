@@ -119,7 +119,15 @@ if(ordenadaa[i][0]!=0) {
 
 
 }
-        varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
+        for (int t=0;t<puntosC.size();t++)
+        {
+            if (puntosC.get(t).getEtiqueta().equals(etiqueta)) {
+                varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
+            }else{
+                varibles_difisas.add(new Variable(puntosC.get(t).getEtiqueta(),entrada_real,0));
+            }
+        }
+        /*varibles_difisas.add(new Variable(etiqueta,entrada_real,Y));
         for (int t=0;t<puntosC.size();t++)
         {
                 if (!puntosC.get(t).getEtiqueta().equals(etiqueta))
@@ -127,7 +135,7 @@ if(ordenadaa[i][0]!=0) {
                     varibles_difisas.add(new Variable(puntosC.get(t).getEtiqueta(),entrada_real,0));
                 }
 
-        }
+        }*/
 bandera=false;
 entrada_real=0;
 etiqueta="";
