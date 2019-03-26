@@ -64,7 +64,9 @@ public class interfaz extends JFrame{
                      }
 
                      JOptionPane.showMessageDialog(null, comp.get(j).getCompetencia()+"\n" + etiq_grad);
+                     System.out.println(comp.get(j).getCompetencia()+"\n" + etiq_grad);
                      etiq_grad = "";
+
                  }
 
                 /*

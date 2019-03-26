@@ -93,26 +93,7 @@ if (bandera==false)
                     x2=rangos_de_traspales[i][1];
                     y2=0;
                     etiqueta= puntosC.get(i).getEtiqueta();
-                    /*if (puntosC.get(i).getP1()==0 || puntosC.get(i).getP2()!=-1)
-                    {
-                        x1=puntosC.get(i).getP2();
-                        y1=1;
-                        x2=rangos_de_traspales[i][1];
-                        y2=0;
-                        etiqueta= puntosC.get(i).getEtiqueta();
-                    }
-                    else
-                    {
-                        if(puntosC.get(i).getP2()==-1)
-                        {
 
-                        }
-                        x1=puntosC.get(i).getP1();
-                        y1=1;
-                        x2=rangos_de_traspales[i][1];
-                        y2=0;
-                        etiqueta= puntosC.get(i).getEtiqueta();
-                    }*/
 
                 }
                 else

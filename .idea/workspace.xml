@@ -4,14 +4,20 @@
     <list default="true" id="b88961e9-2398-45a3-853d-86b0791172bb" name="Default Changelist" comment="Interfaz Casi terminada">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Competencias.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Competencias.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Difusificacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Difusificacion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Evaluar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Evaluar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/FAM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/FAM.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Proceso/Difusificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Difusificacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Proceso/Evaluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Evaluar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proceso/FAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/FAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Proceso/interfaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/interfaz.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,65 +26,65 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1764924506">
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1327" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1327" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Proceso/Difusificacion.java">
+        <entry file="file://$PROJECT_DIR$/src/Proceso/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="2322">
+              <caret line="87" column="10" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2143#2153#0" expanded="true" />
-                <element signature="e#4639#4640#0" expanded="true" />
-                <element signature="e#4679#4680#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proceso/Competencias.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proceso/Difusificacion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4795#4796#0" expanded="true" />
+                <element signature="e#4835#4836#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proceso/FAM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-124">
+              <caret line="156" column="24" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
+              <folding>
+                <element signature="e#302#310#0" expanded="true" />
+                <element signature="e#423#431#0" expanded="true" />
+                <element signature="e#2955#2956#0" expanded="true" />
+                <element signature="e#2979#2980#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Proceso/FAM.java">
+        <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="136" column="19" lean-forward="true" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
+            <state relative-caret-position="59">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               <folding>
-                <element signature="e#302#310#0" expanded="true" />
-                <element signature="e#423#431#0" expanded="true" />
-                <element signature="e#2955#2956#0" expanded="true" />
-                <element signature="e#2979#2980#0" expanded="true" />
-                <element signature="e#967#975#0" expanded="true" />
-                <element signature="e#1031#1039#0" expanded="true" />
-                <element signature="e#1093#1101#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,8 +93,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Proceso/Evaluar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+            <state>
+              <caret line="95" selection-start-line="95" selection-end-line="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proceso/Competencia.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -96,10 +111,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Proceso/Maestro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="439" column="30" lean-forward="true" selection-start-line="439" selection-start-column="30" selection-end-line="439" selection-end-column="30" />
+            <state relative-caret-position="3915">
+              <caret line="148" column="18" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proceso/Indice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2592">
+              <caret line="101" column="57" selection-start-line="101" selection-start-column="57" selection-end-line="101" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proceso/Variable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#479#480#0" expanded="true" />
+                <element signature="e#519#520#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,17 +180,17 @@
         <option value="$PROJECT_DIR$/src/Proceso/interfaz.form" />
         <option value="$PROJECT_DIR$/src/Proceso/variableSalida.java" />
         <option value="$PROJECT_DIR$/src/Proceso/Main.java" />
-        <option value="$PROJECT_DIR$/src/Proceso/interfaz.java" />
         <option value="$PROJECT_DIR$/src/Proceso/FAM.java" />
-        <option value="$PROJECT_DIR$/src/Proceso/Difusificacion.java" />
         <option value="$PROJECT_DIR$/src/Proceso/Evaluar.java" />
+        <option value="$PROJECT_DIR$/src/Proceso/Difusificacion.java" />
+        <option value="$PROJECT_DIR$/src/Proceso/interfaz.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="683" />
-    <option name="width" value="683" />
-    <option name="height" value="728" />
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -166,38 +200,35 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="SE_DIFUSO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SE_DIFUSO" type="462c0819:PsiDirectoryNode" />
+              <item name="SEdifuso" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEdifuso" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SE_DIFUSO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SE_DIFUSO" type="462c0819:PsiDirectoryNode" />
+              <item name="SEdifuso" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEdifuso" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEdifuso" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEdifuso" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SE_DIFUSO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SE_DIFUSO" type="462c0819:PsiDirectoryNode" />
+              <item name="SEdifuso" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEdifuso" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Proceso" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SE_DIFUSO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SE_DIFUSO" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Proceso" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaz" type="e9f4de52:FormNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -214,128 +245,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\obito\Desktop\SEdifuso\src\Proceso" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Difusificacion.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Indice.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$1.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$2.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$3.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$4.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$5.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Proceso/Difusificacion.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Proceso/Evaluar.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Proceso/FAM.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Proceso/Indice.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Proceso/interfaz.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -374,6 +283,7 @@
       <workItem from="1552925273169" duration="4991000" />
       <workItem from="1553050496979" duration="6925000" />
       <workItem from="1553106947698" duration="27049000" />
+      <workItem from="1553559501326" duration="3147000" />
     </task>
     <task id="LOCAL-00001" summary="Agregue clases de archivos y les meti metodos que aun no funcionan.">
       <created>1552860794199</created>
@@ -491,7 +401,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79031000" />
+    <option name="totallyTimeSpent" value="84246000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,9 +413,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33131617" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118336886" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -515,15 +426,15 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.8459488" weight="0.37540984" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.8454158" visible="true" weight="0.2112676" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32786885" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.15405117" side_tool="true" weight="0.3262295" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.15458423" side_tool="true" weight="0.37486458" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49848714" weight="0.15081967" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49848714" weight="0.15059589" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Maven" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -574,9 +485,6 @@
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="SHOW_DETAILS" value="true" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Agregue clases de archivos y les meti metodos que aun no funcionan." />
@@ -649,72 +557,10 @@
     <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/Competencias.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2349">
-          <caret line="87" column="10" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/Competencia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/Maestro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="439" column="30" lean-forward="true" selection-start-line="439" selection-start-column="30" selection-end-line="439" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Proceso/Nodo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/Indice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="170" column="5" selection-start-line="170" selection-start-column="5" selection-end-line="170" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/Variable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="49" column="86" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#956#972#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -730,38 +576,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/Evaluar.java">
+    <entry file="file://$PROJECT_DIR$/src/Proceso/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+        <state relative-caret-position="2322">
+          <caret line="87" column="10" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proceso/Difusificacion.java">
+    <entry file="file://$PROJECT_DIR$/src/Proceso/Competencias.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="513">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/Competencia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/Maestro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3915">
+          <caret line="148" column="18" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/Indice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2592">
+          <caret line="101" column="57" selection-start-line="101" selection-start-column="57" selection-end-line="101" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/Variable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2143#2153#0" expanded="true" />
-            <element signature="e#4639#4640#0" expanded="true" />
-            <element signature="e#4679#4680#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Proceso/FAM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="136" column="19" lean-forward="true" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
+        <state relative-caret-position="-124">
+          <caret line="156" column="24" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
           <folding>
             <element signature="e#302#310#0" expanded="true" />
             <element signature="e#423#431#0" expanded="true" />
             <element signature="e#2955#2956#0" expanded="true" />
             <element signature="e#2979#2980#0" expanded="true" />
-            <element signature="e#967#975#0" expanded="true" />
-            <element signature="e#1031#1039#0" expanded="true" />
-            <element signature="e#1093#1101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/Evaluar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/Difusificacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4795#4796#0" expanded="true" />
+            <element signature="e#4835#4836#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proceso/interfaz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

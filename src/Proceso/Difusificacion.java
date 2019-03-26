@@ -28,20 +28,27 @@ public class Difusificacion {
             variable = maestro.buscarCompetencia(num_variable);
             double [][] traslapes=calculaT(variable);
             int col=0;
+            boolean entrar=true;
             for (int fila = 0; fila < 2; fila++) {
                 if(entrada_real>= traslapes[fila][col]){
                     if (entrada_real<=traslapes[fila][col+1]) {
                         num_etiqueta = fila ;
                         varibles_difisas = evaluarX_En_Traslape(entrada_real, traslapes[fila][col + 1], traslapes[fila][col], num_etiqueta, variable);
-                    }else {
+                        entrar=false;
+                    }/*else {
                         evaluar=new Evaluar(this);
                         varibles_difisas=evaluar.Evaluar_M(entrada_real,variable);
-                    }
+                    }*/
 
                 }/*else {
                         evaluar=new Evaluar(this);
                         varibles_difisas=evaluar.Evaluar_M(entrada_real,variable);
                 }*/
+                if(entrar)
+                {
+                    evaluar=new Evaluar(this);
+                    varibles_difisas=evaluar.Evaluar_M(entrada_real,variable);
+                }
             }
 
         } catch (IOException e) {
