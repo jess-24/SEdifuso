@@ -81,31 +81,35 @@ if (bandera==false)
 
     for (int i = 0; i < rangos_de_traspales.length; i++)
     {
+if(ordenadaa[i][0]!=0) {
+    if (entrada_real < rangos_de_traspales[i][0] && entrada_real > ordenadaa[i][0]) {
+        x1 = ordenadaa[i][0];
+        y1 = 1;
+        x2 = rangos_de_traspales[i][1];
+        y2 = 0;
+        etiqueta = puntosC.get(i).getEtiqueta();
 
-                if (entrada_real<rangos_de_traspales[i][0] && entrada_real>ordenadaa[i][0] )
-                {
-                    x1=ordenadaa[i][0];
-                    y1=1;
-                    x2=rangos_de_traspales[i][1];
-                    y2=0;
-                    etiqueta= puntosC.get(i).getEtiqueta();
 
 
-                }
-                else
-                {
-                    if (entrada_real>rangos_de_traspales[i][1] && entrada_real<ordenadaa[i][1])
-                    {
+    } else {
+        if (entrada_real > rangos_de_traspales[i][1] && entrada_real < ordenadaa[i][1]) {
 
-                            x1=rangos_de_traspales[i][0];
-                            y1=0;
-                            x2=ordenadaa[i][1];
-                            y2=1;
-                            etiqueta= puntosC.get(i+1).getEtiqueta();
+            x1 = rangos_de_traspales[i][0];
+            y1 = 0;
+            x2 = ordenadaa[i][1];
+            y2 = 1;
+            etiqueta = puntosC.get(i + 1).getEtiqueta();
 
-                    }
-                }
-
+        }
+    }
+    if (ordenadaa[i][1] == 0 && ordenadaa[i+1][0]==0) {
+        x1 = ordenadaa[i - 1][1];
+        y1 = 1;
+        x2 = rangos_de_traspales[i][1];
+        y2 = 0;
+        etiqueta = puntosC.get(i).getEtiqueta();
+    }
+}
     }
     Y=calcularM(x1,y1,x2,y2,entrada_real,"Etiqueta");
     //membrecia= Pendiente(entrada_real,x1,y1,x2,y2);

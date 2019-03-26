@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b88961e9-2398-45a3-853d-86b0791172bb" name="Default Changelist" comment="Ya segun esta bien">
+    <list default="true" id="b88961e9-2398-45a3-853d-86b0791172bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Difusificacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Difusificacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Evaluar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/Evaluar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SE_DIFUSO/Proceso/interfaz$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Proceso/Difusificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Difusificacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Proceso/Evaluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proceso/Evaluar.java" afterDir="false" />
     </list>
@@ -44,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Proceso/Difusificacion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="107">
+              <caret line="164" column="25" lean-forward="true" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4795#4796#0" expanded="true" />
@@ -84,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Proceso/Evaluar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="79" column="38" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
+            <state relative-caret-position="208">
+              <caret line="104" column="52" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -173,8 +169,8 @@
         <option value="$PROJECT_DIR$/src/Proceso/Main.java" />
         <option value="$PROJECT_DIR$/src/Proceso/FAM.java" />
         <option value="$PROJECT_DIR$/src/Proceso/interfaz.java" />
-        <option value="$PROJECT_DIR$/src/Proceso/Evaluar.java" />
         <option value="$PROJECT_DIR$/src/Proceso/Difusificacion.java" />
+        <option value="$PROJECT_DIR$/src/Proceso/Evaluar.java" />
       </list>
     </option>
   </component>
@@ -275,7 +271,7 @@
       <workItem from="1553050496979" duration="6925000" />
       <workItem from="1553106947698" duration="27049000" />
       <workItem from="1553559501326" duration="9547000" />
-      <workItem from="1553578371876" duration="421000" />
+      <workItem from="1553578371876" duration="2858000" />
     </task>
     <task id="LOCAL-00001" summary="Agregue clases de archivos y les meti metodos que aun no funcionan.">
       <created>1552860794199</created>
@@ -396,11 +392,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553562717483</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Ya segun esta bien">
+      <created>1553578806483</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1553578806483</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91067000" />
+    <option name="totallyTimeSpent" value="93504000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -425,7 +428,7 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.8454158" visible="true" weight="0.26977247" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.8454158" visible="true" weight="0.31960997" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -493,7 +496,8 @@
     <MESSAGE value="Rangos de Traslapes terminados" />
     <MESSAGE value="Interfaz Casi terminada" />
     <MESSAGE value="Ya muestra" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ya muestra" />
+    <MESSAGE value="Ya segun esta bien" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ya segun esta bien" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SE_DIFUSO.iml">
@@ -649,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Proceso/Difusificacion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        <state relative-caret-position="107">
+          <caret line="164" column="25" lean-forward="true" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4795#4796#0" expanded="true" />
@@ -661,8 +665,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Proceso/Evaluar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="79" column="38" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
+        <state relative-caret-position="208">
+          <caret line="104" column="52" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
         </state>
       </provider>
     </entry>
